@@ -68,7 +68,7 @@ describe 'hashketball' do
   describe '#team_names' do
 
     it 'returns the team names' do
-      teams = team_names
+      teams = team_names # expects teams to equal ["Brooklyn Nets", "Charlotte Hornets"]
       expect(teams.size).to eq(2)
       teams.each do |name|
         expect(["Brooklyn Nets", "Charlotte Hornets"]).to include(name)

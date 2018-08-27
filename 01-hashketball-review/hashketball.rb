@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -114,3 +116,82 @@ def game_hash
     }
   }
 end
+
+def get_player_info(player_name)
+  game_hash.each do |team, team_info|
+    # go through each player
+    team_info[:players].each do |player_hash|
+      # find the player whose name matches
+      if player_hash[:player_name] == player_name
+        return player_hash
+      end
+    end
+  end
+end
+
+def num_points_scored(player_name)
+  # gets number of points scored by given player
+  player_hash = get_player_info(player_name)
+  player_hash[:points]
+end
+
+def shoe_size(player_name)
+  # gets shoe size of given player
+  player_hash = get_player_info(player_name)
+  player_hash[:shoe]
+end
+
+def team_colors(team_name)
+  # go over the teams
+  game_hash.each do |location, team_info|
+    # location is key e.g. :home
+    # team_info is hash of that team
+    # find the one that matches given parameter
+    if team_info[:team_name] == team_name
+      # return team_colors
+      return team_info[:colors]
+    end
+  end
+end
+
+def team_names
+  # returns team names
+  game_hash.map do |location, team_info|
+    team_info[:team_name]
+  end
+end
+
+def player_numbers(team_name)
+  game_hash.each do |location, team_info|
+    # binding.pry
+      if team_info[:team_name] == team_name
+        # binding.pry
+        player_number_array = team_info[:players].map do |player_info_hash|
+          player_info_hash[:number]
+        end
+        return player_number_array
+      end
+  end
+end
+
+def player_stats(player_name)
+  player_info = get_player_info(player_name)
+  player_info.delete(:player_name)
+  player_info
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
