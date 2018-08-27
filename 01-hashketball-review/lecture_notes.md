@@ -24,7 +24,7 @@
 
 - Discuss map vs each, select vs find.  Do some examples with numbers and stuff
 
-```
+```rb
 instructors = [
   {name: "Paul", college: "Rutgers"},
   {name: "Morgan", college: "BYU"},
@@ -48,7 +48,7 @@ colleges
 
 - Build helper methods:
 
-```
+```rb
 def get_all_players
 # returns array of each player's hash
   game_hash.values.map do |team|
