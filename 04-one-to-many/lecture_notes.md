@@ -61,3 +61,56 @@
     Build the rest of the deliverables
 
     Makes more sense for a tweet to remember its user than a user to remember all their tweets
+
+
+user.rb
+```rb
+class User
+
+    attr_reader :username
+
+    
+
+    def initialize(username)
+        @username = username
+        my_tweets = []
+    end
+
+    def tweets
+        tweets = Tweet.all.collect do |tweet|
+            if tweet.user == self
+                tweet
+            end
+        end
+        tweets.compact
+    end
+
+    def post_tweet(text)
+        Tweet.new(text, self)
+    end
+end
+```
+
+tweet.rb
+```rb
+class Tweet
+
+    attr_reader :message, :user
+
+    @@all = []
+
+    def initialize(message, user)
+        @message, @user = message, user
+        @@all << self
+    end
+
+    def username
+        self.user.username
+    end
+
+    def self.all
+        @@all
+    end
+
+end
+```
