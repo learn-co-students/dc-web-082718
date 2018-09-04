@@ -3,7 +3,7 @@ You are building an app for a Lyft/Uber competitor
 - your models are clients, drivers, rides
   - a client has a name
   - a driver has a name
-  - a driver has a car (stored as a string of make model, e.g. "Toyota Camry")
+  - a driver has a car (stored as a string of make/model, e.g. "Toyota Camry")
   - a ride has a distance (as a float)
   - a client has many rides
   - a driver has many rides
@@ -26,7 +26,7 @@ Write out the relationships using has_many, belongs_to and has_many_through. Cre
 - #clients
   - returns all clients a driver has had
 - #rides
-  - returns all drives a client has made
+  - returns all rides a driver has made
 - .all
   - returns an array of all drivers
 - .mileage_cap(distance)
