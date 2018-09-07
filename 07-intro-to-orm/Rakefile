@@ -5,4 +5,40 @@ task :console do
     Pry.start
 end
 
+desc "Says hello to everyone"
+task :say_hi do
+    puts "Hello everybody I am a Rake task"
+end
+
+desc "Set up database"
+task :db_setup do
+    book_sql = <<-SQL
+        CREATE TABLE IF NOT EXISTS books(
+            id integer PRIMARY KEY,
+            title varchar(255),
+            author_id integer
+        );
+    SQL
+    DB.execute(book_sql)
+
+    author_sql = <<-SQL
+        CREATE TABLE IF NOT EXISTS authors(
+            id integer PRIMARY KEY,
+            name varchar(255)
+        );
+    SQL
+    DB.execute(author_sql)
+end
+
+desc "Drop database"
+task :db_drop do
+    sql = "DROP TABLE authors"
+    DB.execute(sql)
+end
+
+desc "Seed database"
+task :db_seed do
+    Author.create("JK Rowling")
+    Author.create("William Shakespeare")
+    Author.create("Kim Kardashian")
 end

@@ -1,0 +1,46 @@
+require_relative './config/environment'
+require 'sinatra/activerecord/rake'
+require_relative './lib/author.rb'
+desc "Start our app console"
+task :console do
+  Pry.start
+end
+
+desc "Say hello to everyone"
+task :hello do
+	puts "What's up everyone"
+end
+
+# desc "Set up database"
+# task :db_setup do
+#     drop_book_table_sql = <<-SQL
+#         DROP TABLE IF EXISTS books;
+#     SQL
+#     DB.execute(drop_book_table_sql)
+#     drop_author_table_sql = <<-SQL
+#         DROP TABLE IF EXISTS authors;
+#     SQL
+#     DB.execute(drop_author_table_sql)
+#     book_sql = <<-SQL
+#         CREATE TABLE IF NOT EXISTS books(
+#             id integer PRIMARY KEY,
+#             title varchar(255),
+#             author_id integer
+#         );
+#     SQL
+#     DB.execute(book_sql)
+
+#     author_sql = <<-SQL
+#         CREATE TABLE IF NOT EXISTS authors(
+#             id integer PRIMARY KEY,
+#             name varchar(255)
+#         );
+#     SQL
+#     DB.execute(author_sql)
+# end
+
+# desc "Seed database"
+# task :db_seed do
+#     ruby "db/seeds.rb"
+# end
+

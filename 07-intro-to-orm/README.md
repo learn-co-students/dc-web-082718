@@ -3,6 +3,7 @@
 ## Objectives
   - Understand the purpose of a Gemfile and Rake tasks
   - Build our own Rake tasks
+  - CRUD for Authors
   - Correctly implement foreign key relationship
   - Create SQL tables that correspond to Ruby classes
   - Organize code files in a logical manner
