@@ -1,5 +1,7 @@
 module GoogleBooks
+
   class Adapter
+
     BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
 
     attr_reader :author
@@ -16,7 +18,6 @@ module GoogleBooks
         book.author = author
         book.title = item['volumeInfo']['title']
         book.snippet = item['volumeInfo']['description']
-
         book.save
       end
     end

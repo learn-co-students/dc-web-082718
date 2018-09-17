@@ -15,7 +15,7 @@
 - Create migration for the `books` table.
 - Show seed table using Google Books
 
-```
+```rb
 class CreateBooks < ActiveRecord::Migration[5.1]
   def change
     create_table :books do |t|
@@ -31,7 +31,7 @@ end
 
 
 
-```
+```rb
 class ApplicationController < Sinatra::Base
 
     get "/" do
@@ -82,7 +82,7 @@ end
     - get `/books/new`
     - post '/books'
 
-```
+```rb
 <form action="/books" method="POST">
     <label for="author">Author</label>
     <input type="text" name="author" >
@@ -97,7 +97,7 @@ end
 - put pry in post to see
 
 - make the long way first, point out we're just recreating params
-```
+```rb
     post '/books' do 
         # author = params[:author]
         # title = params[:title]
@@ -115,7 +115,7 @@ end
 `get /books/:id/edit`
 `patch /books/:id`
 
-```
+```rb
     get '/books/:id/edit' do
         @book = Book.find(params[:id])
         erb :edit

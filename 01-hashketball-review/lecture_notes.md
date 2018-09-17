@@ -27,7 +27,7 @@
 ```rb
 instructors = [
   {name: "Paul", college: "Rutgers"},
-  {name: "Morgan", college: "BYU"},
+  {name: "Jake", college: "BYU"},
   {name: "Melanie", college: "Michigan"}
 ]
 
