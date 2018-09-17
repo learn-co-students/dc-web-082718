@@ -17,7 +17,7 @@ module GoogleBooks
         book = ::Book.new
         book.author = author
         book.title = item['volumeInfo']['title']
-        book.snippet = item['volumeInfo']['description']
+        book.snippet = item['volumeInfo']['description'] 
         book.save
       end
     end
