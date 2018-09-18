@@ -76,6 +76,20 @@ class ApplicationController < Sinatra::Base
         erb :"authors/show"
     end
 
+    get "/authors/:id/edit" do
+        @author = Author.find(params[:id])
+        erb :"authors/edit"
+    end
+
+    put "/authors/:id" do
+        binding.pry
+        author = Author.find(params[:id])
+        first_name = params[:first_name]
+        last_name = params[:last_name]
+        author.update(first_name: first_name, last_name: last_name)
+        redirect "/authors/#{author.id}"
+    end
+
 end
 
 
