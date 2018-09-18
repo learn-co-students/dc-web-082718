@@ -24,7 +24,6 @@ class ApplicationController < Sinatra::Base
         snippet = params[:snippet]
 
         book = Book.create(author: author, title: title, snippet: snippet)
-
         redirect "books/#{book.id}"
     end
 
@@ -51,7 +50,6 @@ class ApplicationController < Sinatra::Base
     get "/books/:id/delete" do 
         book = Book.find(params[:id])
         book.destroy
-
         redirect "/books"
     end
 
@@ -60,7 +58,23 @@ class ApplicationController < Sinatra::Base
         erb :"authors/index"
     end
 
+    get "/authors/new" do
 
+        erb :"authors/new"
+    end
+
+    post "/authors" do
+        first_name = params[:first_name]
+        last_name = params[:last_name]
+        author = Author.create(first_name: first_name, last_name: last_name)
+        redirect "/authors/#{author.id}"
+    end
+
+    get "/authors/:id" do
+        author_id = params[:id]
+        @author = Author.find(author_id)
+        erb :"authors/show"
+    end
 
 end
 
