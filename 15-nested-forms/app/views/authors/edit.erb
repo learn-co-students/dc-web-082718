@@ -1,0 +1,10 @@
+<h1>Edit this author</h1>
+
+<form action="/authors/<%= @author.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="first_name">First Name</label>
+    <input type="text" name="first_name" value="<%= @author.first_name %>">
+    <label for="last_name">Last Name</label>
+    <input type="radio" name="last_name" value="<%= @author.last_name %>"> 
+    <input type="submit" value="Edit Author">
+</form>
