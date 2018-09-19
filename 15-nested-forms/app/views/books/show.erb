@@ -1,14 +1,14 @@
 <h1><%= @book.title %></h1>
-<h2>by <%= @book.author %></h2>
+<h2>by <%= @book.author.full_name %></h2>
 
 <div>
     <%= @book.snippet %>
 </div>
 
-<form action="/books/<%= @book.id %>" method="POST">
+<!-- <form action="/books/<%= @book.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete this book">
-</form>
+</form> -->
 <a href="/books/<%= @book.id %>/delete">Delete this book</a>
 <a href="/books/<%= @book.id %>/edit">Edit this book</a>
 <a href="/books">Index Page</a>

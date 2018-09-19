@@ -17,7 +17,7 @@ module GoogleBooks
 
       books['items'].each do |item|
         book = ::Book.new
-        book.author = author.full_name
+        book.author = author
         book.title = item['volumeInfo']['title']
         book.snippet = item['volumeInfo']['description'] 
         book.save

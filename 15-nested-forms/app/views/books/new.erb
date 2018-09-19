@@ -1,7 +1,11 @@
 <form action="/books" method="POST">
     <label for="author">Author</label>
-    <input type="text" name="author" placeholder="Your author">
-    <label for="title">Title</label>
+    <select name="author">
+        <% @authors.each do |author| %>
+          <option value="<%= author.id %>"><%= author.full_name %></option>
+        <% end %>
+    </select>
+    <label for="title">Title</label>   
     <input type="text" name="title">
     <label for="snippet">Snippet</label>
     <input type="text" name="snippet">
