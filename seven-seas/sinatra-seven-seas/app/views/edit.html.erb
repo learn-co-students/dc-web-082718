@@ -1,0 +1,32 @@
+
+<div class="container">
+  <form method="POST" action="/seas/<%=@sea.id%>">
+    <p>Name: <input class="form-control" type="text" value= "<%= @sea.name %>" name="name"></p>
+    <p>Bio: <input class="form-control" type="text" value= "<%= @sea.bio %>" name="bio"></p>
+    <p>Image URL: <input class="form-control" type="text" value= "<%= @sea.image_url %>" name="image_url"></p>
+    <p>Temperature: <input class="form-control" type="text" value= "<%= @sea.temperature %>" name="temperature"></p>
+    <p>Favorite Color: <input class="form-control" type="text" value= "<%= @sea.favorite_color %>" name="favorite_color"></p>
+    <p>Scariest Creature: <input class="form-control" type="text" value= "<%= @sea.scariest_creature %>" name="scariest_creature"></p>
+    <p>Mood: <input class="form-control" type="text" value= "<%= @sea.mood %>" name="mood"></p>
+    <p>
+      <input type="checkbox" name="has_mermaids" <%= @sea.has_mermaids ? 'checked' : ''%> /> Has Mermaids
+    </p>
+    <input class="form-control btn btn-info" type="submit">
+
+  </form>
+  <div class="text-center row" style="margin: 1em">
+    <div class="col-sm-1">
+      <button class="btn btn-info" style="margin: 0 auto"><a href="/seas/<%=@sea.id%>">Back</a></button>
+    </div>
+    <div class="col-sm-1">
+    <button class="btn btn-info" style="margin: 0 auto"><a class="btn-info" href="/seas">All Seas</a></button>
+    </div>
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-1">
+    <form action="/seas/<%=@sea.id%>/delete" method="post" style="margin: 0 auto">
+        <input class="btn btn-danger" type="submit" value="Delete"/>
+    </form>
+    </div>
+  </div>
+</div>

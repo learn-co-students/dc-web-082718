@@ -1,0 +1,64 @@
+@media screen {
+  /* --- Reset Styles --- */
+  * {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* --- Welcome Page Styles --- */
+  body {
+    background-color: lightblue;
+    color: #333;
+    font-family: Sans-Serif;
+    line-height: 18px;
+  }
+
+
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  .main {
+    overflow: hidden;
+  }
+
+
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: auto;
+  }
+
+  .content, .sidebar {
+    float: none;
+    width: 100%;
+  }
+
+  .sidebar {
+    background: transparent;
+    border: none;
+    border-top: 2px solid #ccc;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

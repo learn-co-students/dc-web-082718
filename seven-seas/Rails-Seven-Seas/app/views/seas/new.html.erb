@@ -1,0 +1,28 @@
+<%= form_for @sea do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :temperature %>
+  <%= f.number_field :temperature %>
+
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.label :mood %>
+  <%= f.text_field :mood %>
+
+  <%= f.label :favorite_color %>
+  <%= f.text_field :favorite_color %>
+
+  <%= f.label :scariest_creature %>
+  <%= f.text_field :scariest_creature %>
+
+  <%= f.label :has_mermaids %>
+  <%= f.check_box :has_mermaids %>
+
+  <%=  f.submit %>
+
+  <% end %>
