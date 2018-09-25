@@ -1,0 +1,19 @@
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul {
+    list-style: square;
+    color: green;
+    font-family: "Arial"
+}
+
+ul a {
+    color: green;
+    // text-decoration: none;
+}
+
+form .snack_name label,
+form .snack_name input {
+    color: blue;
+    font-weight: bold;
+}
