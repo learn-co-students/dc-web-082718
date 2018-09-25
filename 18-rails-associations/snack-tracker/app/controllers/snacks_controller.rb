@@ -38,7 +38,8 @@ class SnacksController < ApplicationController
     params.require(:snack).permit(
         :name,
         :deliciousness,
-        :calories)
+        :calories,
+        :retailer_id)
   end
 
   def find_snack

@@ -13,6 +13,10 @@
     </div>
 
     <div>
+        <%= f.label :retailer %>
+        <%= f.collection_select(:retailer_id, Retailer.all, :id, :name )%>
+
+    <div>
         <%= f.submit %>
     </div>
 <% end %>
