@@ -1,20 +1,3 @@
 <h1>New Snack</h1>
 
-<%= form_for @snack do |f| %>
-    <div class="snack_name">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </div>
-    <div>
-        <%= f.label :calories %>
-        <%= f.number_field :calories, :step => 50 %>
-    </div>
-    <div>
-        <%= f.label :deliciousness %>
-        <%= f.select :deliciousness, (1..10) %>
-    </div>
-
-    <div>
-        <%= f.submit "Snackify" %>
-    </div>
-<% end %>
+<%= render "partials/snack_form" %>
