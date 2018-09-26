@@ -16,7 +16,6 @@ class RetailersController < ApplicationController
 
   def create
     @retailer = Retailer.create(retailer_params)
-    byebug
     redirect_to @retailer 
   end
 

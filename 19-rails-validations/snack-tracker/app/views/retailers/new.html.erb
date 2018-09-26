@@ -1,5 +1,7 @@
 <h1>Create a new retailer</h1>
 
+<%= render partial: "partials/error_list", locals: {new_object: @retailer} %>
+
 <%= form_for @retailer do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
