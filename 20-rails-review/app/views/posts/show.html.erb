@@ -1,0 +1,22 @@
+<h1>Show Post Page</h1>
+
+<h2>Title:</h2>
+<p><%= @post.title %></p>
+
+<h2>Destination:</h2>
+<p><%= @post.destination.name %></p>
+
+<h2>Author: </h2>
+<p><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+
+<p>Likes: <%= @post.likes %></p>
+
+<form action="/posts/<%="#{@post.id}"%>/update_likes" method="get">
+  <input type="submit" value="Like" >
+</form >
+
+
+
+
+<h2>Content:</h2>
+<p><%= @post.content %></p>
