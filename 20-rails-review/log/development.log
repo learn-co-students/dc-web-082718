@@ -1,0 +1,1080 @@
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "bloggers"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "bloggers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "bio" varchar, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "destinations"[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "destinations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "country" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (30.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "likes" integer, "blogger_id" integer, "destination_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180815094403)[0m
+  [1m[35m (34.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180815094236),
+(20180815094159);
+
+[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-27 14:05:19.847241"], ["updated_at", "2018-09-27 14:05:19.847241"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bloggers"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "bloggers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "bio" varchar, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "destinations"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "destinations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "country" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "likes" integer, "blogger_id" integer, "destination_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180815094403)[0m
+  [1m[35m (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180815094236),
+(20180815094159);
+
+[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-27 14:05:19.921325"], ["updated_at", "2018-09-27 14:05:19.921325"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-09-27 14:05:19.928957"], ["key", "environment"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sunspear"], ["country", "Antigua and Barbuda"], ["created_at", "2018-09-27 14:05:21.618589"], ["updated_at", "2018-09-27 14:05:21.618589"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Braavos"], ["country", "Canada"], ["created_at", "2018-09-27 14:05:21.622963"], ["updated_at", "2018-09-27 14:05:21.622963"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bhorash"], ["country", "Vietnam"], ["created_at", "2018-09-27 14:05:21.628038"], ["updated_at", "2018-09-27 14:05:21.628038"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sar Meel"], ["country", "Finland"], ["created_at", "2018-09-27 14:05:21.640602"], ["updated_at", "2018-09-27 14:05:21.640602"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Oros"], ["country", "Haiti"], ["created_at", "2018-09-27 14:05:21.647200"], ["updated_at", "2018-09-27 14:05:21.647200"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tolos"], ["country", "Turkmenistan"], ["created_at", "2018-09-27 14:05:21.652459"], ["updated_at", "2018-09-27 14:05:21.652459"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "White Harbor"], ["country", "Antigua and Barbuda"], ["created_at", "2018-09-27 14:05:21.656773"], ["updated_at", "2018-09-27 14:05:21.656773"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chroyane"], ["country", "Sri Lanka"], ["created_at", "2018-09-27 14:05:21.662694"], ["updated_at", "2018-09-27 14:05:21.662694"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Gulltown"], ["country", "Jersey"], ["created_at", "2018-09-27 14:05:21.669571"], ["updated_at", "2018-09-27 14:05:21.669571"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Asshai"], ["country", "Syrian Arab Republic"], ["created_at", "2018-09-27 14:05:21.684819"], ["updated_at", "2018-09-27 14:05:21.684819"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vaes Dothrak"], ["country", "Sweden"], ["created_at", "2018-09-27 14:05:21.693667"], ["updated_at", "2018-09-27 14:05:21.693667"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Yunkai"], ["country", "Guatemala"], ["created_at", "2018-09-27 14:05:21.699446"], ["updated_at", "2018-09-27 14:05:21.699446"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lorath"], ["country", "Russian Federation"], ["created_at", "2018-09-27 14:05:21.706461"], ["updated_at", "2018-09-27 14:05:21.706461"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ny Sar"], ["country", "Bhutan"], ["created_at", "2018-09-27 14:05:21.716158"], ["updated_at", "2018-09-27 14:05:21.716158"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sunspear"], ["country", "Dominica"], ["created_at", "2018-09-27 14:05:21.724162"], ["updated_at", "2018-09-27 14:05:21.724162"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Braavos"], ["country", "French Polynesia"], ["created_at", "2018-09-27 14:05:21.733213"], ["updated_at", "2018-09-27 14:05:21.733213"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Astapor"], ["country", "Guadeloupe"], ["created_at", "2018-09-27 14:05:21.747573"], ["updated_at", "2018-09-27 14:05:21.747573"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tyrosh"], ["country", "Sri Lanka"], ["created_at", "2018-09-27 14:05:21.754751"], ["updated_at", "2018-09-27 14:05:21.754751"]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sar Meel"], ["country", "Slovenia"], ["created_at", "2018-09-27 14:05:21.771684"], ["updated_at", "2018-09-27 14:05:21.771684"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lorath"], ["country", "Italy"], ["created_at", "2018-09-27 14:05:21.787315"], ["updated_at", "2018-09-27 14:05:21.787315"]]
+  [1m[35m (28.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Old Valyria"], ["country", "Cook Islands"], ["created_at", "2018-09-27 14:05:21.823796"], ["updated_at", "2018-09-27 14:05:21.823796"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lannisport"], ["country", "Isle of Man"], ["created_at", "2018-09-27 14:05:21.828971"], ["updated_at", "2018-09-27 14:05:21.828971"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Astapor"], ["country", "Lebanon"], ["created_at", "2018-09-27 14:05:21.835106"], ["updated_at", "2018-09-27 14:05:21.835106"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Qarth"], ["country", "Monaco"], ["created_at", "2018-09-27 14:05:21.841082"], ["updated_at", "2018-09-27 14:05:21.841082"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sar Meel"], ["country", "Dominica"], ["created_at", "2018-09-27 14:05:21.849644"], ["updated_at", "2018-09-27 14:05:21.849644"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Asshai"], ["country", "Dominica"], ["created_at", "2018-09-27 14:05:21.860892"], ["updated_at", "2018-09-27 14:05:21.860892"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Myr"], ["country", "Cook Islands"], ["created_at", "2018-09-27 14:05:21.865898"], ["updated_at", "2018-09-27 14:05:21.865898"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bhorash"], ["country", "Sweden"], ["created_at", "2018-09-27 14:05:21.875105"], ["updated_at", "2018-09-27 14:05:21.875105"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lorath"], ["country", "Greece"], ["created_at", "2018-09-27 14:05:21.883542"], ["updated_at", "2018-09-27 14:05:21.883542"]]
+  [1m[35m (21.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tyria"], ["country", "Cuba"], ["created_at", "2018-09-27 14:05:21.907664"], ["updated_at", "2018-09-27 14:05:21.907664"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alexandra Goldner"], ["bio", "Cliche kale chips messenger bag. Carry locavore chia bespoke freegan echo mlkshk. 90's flexitarian readymade. Chartreuse readymade banh mi."], ["age", 82], ["created_at", "2018-09-27 14:05:21.992708"], ["updated_at", "2018-09-27 14:05:21.992708"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-09-27 10:17:43 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/bgonzalez/.rvm/gems/ruby-2.3.3/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/bgonzalez/.rvm/gems/ruby-2.3.3/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+Completed 200 OK in 42ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bloggers/new" for 127.0.0.1 at 2018-09-27 10:18:02 -0400
+Processing by BloggersController#new as HTML
+  Rendering bloggers/new.html.erb within layouts/application
+  Rendered bloggers/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 174649ms (Views: 1976.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bloggers/new" for 127.0.0.1 at 2018-09-27 10:21:11 -0400
+Processing by BloggersController#new as HTML
+  Rendering bloggers/new.html.erb within layouts/application
+  Rendered bloggers/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 98ms (Views: 52.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:30:29 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 142ms (Views: 61.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:31:44 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 131ms (Views: 126.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:36:07 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1210.0ms)
+Completed 200 OK in 1254ms (Views: 1247.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:36:57 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 79ms (Views: 47.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-09-27 10:36:59 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mlqNtAEhz+pmO7enPQipXSasU/ABNZ6V896eFeoQGBJ67FWYCBPu34F6WcNzD45PG2cGjnxO4GPortaQLpOyKQ==", "post"=>{"title"=>"", "content"=>""}, "commit"=>"Create Post"}
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 314725ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:42:17 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 154ms (Views: 119.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-09-27 10:42:18 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxhJT1HPOMdFPAIcA4yOHUr1NzPRFKQM9ZJhmnyc2kRTrpFjWP0Z8qJ97HhNi6kPdz5iTaxv2vru4ikfuB9wfw==", "post"=>{"title"=>"", "content"=>""}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 36681ms (ActiveRecord: 0.2ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/posts_controller.rb:14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mantarys"], ["country", "Iraq"], ["created_at", "2018-09-27 14:43:19.706702"], ["updated_at", "2018-09-27 14:43:19.706702"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sunspear"], ["country", "United States Minor Outlying Islands"], ["created_at", "2018-09-27 14:43:19.714767"], ["updated_at", "2018-09-27 14:43:19.714767"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Elyria"], ["country", "Wallis and Futuna"], ["created_at", "2018-09-27 14:43:19.720632"], ["updated_at", "2018-09-27 14:43:19.720632"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Oros"], ["country", "Botswana"], ["created_at", "2018-09-27 14:43:19.726774"], ["updated_at", "2018-09-27 14:43:19.726774"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chroyane"], ["country", "Australia"], ["created_at", "2018-09-27 14:43:19.735806"], ["updated_at", "2018-09-27 14:43:19.735806"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Myr"], ["country", "Switzerland"], ["created_at", "2018-09-27 14:43:19.742546"], ["updated_at", "2018-09-27 14:43:19.742546"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lannisport"], ["country", "Jordan"], ["created_at", "2018-09-27 14:43:19.748262"], ["updated_at", "2018-09-27 14:43:19.748262"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lannisport"], ["country", "Gibraltar"], ["created_at", "2018-09-27 14:43:19.754664"], ["updated_at", "2018-09-27 14:43:19.754664"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Old Valyria"], ["country", "Denmark"], ["created_at", "2018-09-27 14:43:19.759787"], ["updated_at", "2018-09-27 14:43:19.759787"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tyrosh"], ["country", "Mozambique"], ["created_at", "2018-09-27 14:43:19.766725"], ["updated_at", "2018-09-27 14:43:19.766725"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ny Sar"], ["country", "Cyprus"], ["created_at", "2018-09-27 14:43:19.772113"], ["updated_at", "2018-09-27 14:43:19.772113"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Qarth"], ["country", "Martinique"], ["created_at", "2018-09-27 14:43:19.787426"], ["updated_at", "2018-09-27 14:43:19.787426"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Astapor"], ["country", "Wallis and Futuna"], ["created_at", "2018-09-27 14:43:19.796319"], ["updated_at", "2018-09-27 14:43:19.796319"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.0ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Yunkai"], ["country", "United Kingdom"], ["created_at", "2018-09-27 14:43:19.840349"], ["updated_at", "2018-09-27 14:43:19.840349"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vaes Dothrak"], ["country", "Ukraine"], ["created_at", "2018-09-27 14:43:19.863703"], ["updated_at", "2018-09-27 14:43:19.863703"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Qarth"], ["country", "Cyprus"], ["created_at", "2018-09-27 14:43:19.899283"], ["updated_at", "2018-09-27 14:43:19.899283"]]
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lys"], ["country", "Philippines"], ["created_at", "2018-09-27 14:43:19.925704"], ["updated_at", "2018-09-27 14:43:19.925704"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tyrosh"], ["country", "Ireland"], ["created_at", "2018-09-27 14:43:19.939683"], ["updated_at", "2018-09-27 14:43:19.939683"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Gulltown"], ["country", "Nauru"], ["created_at", "2018-09-27 14:43:19.946386"], ["updated_at", "2018-09-27 14:43:19.946386"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lannisport"], ["country", "South Georgia and the South Sandwich Islands"], ["created_at", "2018-09-27 14:43:19.953835"], ["updated_at", "2018-09-27 14:43:19.953835"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vaes Dothrak"], ["country", "Chad"], ["created_at", "2018-09-27 14:43:19.964698"], ["updated_at", "2018-09-27 14:43:19.964698"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Astapor"], ["country", "Afghanistan"], ["created_at", "2018-09-27 14:43:19.976552"], ["updated_at", "2018-09-27 14:43:19.976552"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lannisport"], ["country", "Liechtenstein"], ["created_at", "2018-09-27 14:43:19.999628"], ["updated_at", "2018-09-27 14:43:19.999628"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bhorash"], ["country", "Monaco"], ["created_at", "2018-09-27 14:43:20.014588"], ["updated_at", "2018-09-27 14:43:20.014588"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Pentos"], ["country", "Zimbabwe"], ["created_at", "2018-09-27 14:43:20.027641"], ["updated_at", "2018-09-27 14:43:20.027641"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tyrosh"], ["country", "Namibia"], ["created_at", "2018-09-27 14:43:20.034830"], ["updated_at", "2018-09-27 14:43:20.034830"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tyria"], ["country", "Marshall Islands"], ["created_at", "2018-09-27 14:43:20.040462"], ["updated_at", "2018-09-27 14:43:20.040462"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Samyrian"], ["country", "Albania"], ["created_at", "2018-09-27 14:43:20.049583"], ["updated_at", "2018-09-27 14:43:20.049583"]]
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.7ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bhorash"], ["country", "Trinidad and Tobago"], ["created_at", "2018-09-27 14:43:20.071055"], ["updated_at", "2018-09-27 14:43:20.071055"]]
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "New Ghis"], ["country", "Tanzania"], ["created_at", "2018-09-27 14:43:20.116305"], ["updated_at", "2018-09-27 14:43:20.116305"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Ronny Krajcik"], ["bio", "Echo blog pinterest 8-bit stumptown hammock. Pabst hoodie meggings blue bottle whatever. Paleo phlogiston retro knausgaard."], ["age", 29], ["created_at", "2018-09-27 14:43:20.198567"], ["updated_at", "2018-09-27 14:43:20.198567"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (23.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lumbersexual wolf organic goth."], ["content", "[\"Single-origin coffee fixie actually pour-over. Plaid gluten-free poutine flannel kale chips sartorial put a bird on it. Offal loko gentrify. Messenger bag diy ennui cardigan ramps ethical pork belly. Art party schlitz kombucha.\", \"Bitters beard tofu before they sold out forage hashtag lo-fi direct trade. Single-origin coffee art party mumblecore chia wes anderson. Crucifix ugh pickled letterpress single-origin coffee chartreuse bitters salvia. Pop-up fashion axe ugh forage hashtag microdosing chillwave synth. Listicle asymmetrical carry.\", \"Lumbersexual lo-fi 90's fashion axe typewriter pabst vhs kogi. Five dollar toast shabby chic aesthetic. Pinterest tousled neutra organic chillwave single-origin coffee swag. Disrupt fingerstache selvage leggings knausgaard drinking vice.\", \"Vice yuccie hammock humblebrag cornhole irony tofu chia. Godard selfies bicycle rights sartorial. Letterpress portland cornhole tilde meh. Kinfolk locavore viral literally messenger bag 8-bit irony seitan. Locavore beard yr pop-up mustache put a bird on it venmo.\"]"], ["likes", 0], ["blogger_id", 2], ["destination_id", 3], ["created_at", "2018-09-27 14:43:20.350132"], ["updated_at", "2018-09-27 14:43:20.350132"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Synth distillery mumblecore pork belly brunch green juice celiac yuccie."], ["content", "[\"Flannel occupy yolo austin normcore salvia. Street tousled seitan pickled five dollar toast ethical asymmetrical. Heirloom +1 microdosing echo fingerstache pickled offal paleo. Scenester five dollar toast vice vhs actually umami sriracha. Banh mi try-hard offal paleo ramps.\", \"Master pug scenester wayfarers. Cliche franzen pop-up celiac selvage offal meditation. Retro literally yolo blog mlkshk cliche biodiesel.\", \"Iphone fixie pabst banh mi. Intelligentsia selfies typewriter. Gentrify wayfarers lumbersexual sartorial asymmetrical fanny pack. Trust fund ennui whatever swag farm-to-table messenger bag. Next level typewriter pabst austin.\", \"Viral seitan quinoa shabby chic ethical trust fund meh. Beard hashtag selvage wolf wes anderson godard. Jean shorts marfa brooklyn. Bitters fashion axe yolo artisan squid bespoke lomo biodiesel.\"]"], ["likes", 0], ["blogger_id", 2], ["destination_id", 36], ["created_at", "2018-09-27 14:43:20.396082"], ["updated_at", "2018-09-27 14:43:20.396082"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Meh iphone chartreuse."], ["content", "[\"Direct trade ethical lomo chartreuse authentic williamsburg. Letterpress whatever wolf. Viral cliche squid crucifix etsy seitan carry marfa.\", \"Wayfarers cornhole asymmetrical celiac cold-pressed humblebrag health craft beer. Messenger bag thundercats skateboard occupy etsy organic pug. Next level gluten-free celiac. Everyday crucifix forage kickstarter migas xoxo pitchfork.\", \"Single-origin coffee you probably haven't heard of them biodiesel paleo. Seitan goth bicycle rights farm-to-table photo booth muggle magic. Occupy chillwave helvetica whatever single-origin coffee irony tofu. Next level pickled humblebrag semiotics typewriter.\", \"Poutine letterpress tote bag art party. Direct trade normcore kickstarter sustainable shabby chic salvia. Cleanse kitsch slow-carb mumblecore.\"]"], ["likes", 0], ["blogger_id", 2], ["destination_id", 17], ["created_at", "2018-09-27 14:43:20.427585"], ["updated_at", "2018-09-27 14:43:20.427585"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Occupy truffaut fashion axe selfies seitan paleo locavore."], ["content", "[\"Literally cleanse fashion axe microdosing. Selfies xoxo disrupt twee. Scenester hella organic tilde chicharrones vinegar mixtape phlogiston.\", \"Pinterest tilde marfa sustainable microdosing thundercats cardigan you probably haven't heard of them. 8-bit cardigan leggings butcher. Chicharrones 90's asymmetrical beard readymade. Kinfolk migas tote bag cray humblebrag carry next level. Fashion axe pop-up park.\", \"Health deep v wolf tilde vinegar. Crucifix selfies banh mi williamsburg. Church-key chartreuse selvage cleanse next level health everyday street. Tote bag chillwave semiotics disrupt lo-fi neutra marfa. Put a bird on it cardigan seitan chambray banjo blue bottle.\", \"Tattooed kitsch artisan occupy messenger bag. Authentic cornhole aesthetic seitan loko pabst tousled venmo. Celiac raw denim listicle next level distillery gastropub.\"]"], ["likes", 0], ["blogger_id", 2], ["destination_id", 27], ["created_at", "2018-09-27 14:43:20.445475"], ["updated_at", "2018-09-27 14:43:20.445475"]]
+  [1m[35m (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dr. Sandy Windler"], ["bio", "+1 thundercats brooklyn butcher celiac health skateboard. Tacos irony yuccie. Cleanse occupy mumblecore artisan beard five dollar toast. Green juice kombucha stumptown semiotics twee leggings. Typewriter tacos pop-up."], ["age", 58], ["created_at", "2018-09-27 14:43:20.477921"], ["updated_at", "2018-09-27 14:43:20.477921"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dreamcatcher locavore truffaut stumptown flexitarian mustache drinking."], ["content", "[\"Meggings 8-bit goth gentrify. Wayfarers pug godard art party meggings bitters semiotics. Normcore food truck you probably haven't heard of them austin cold-pressed forage. Try-hard neutra etsy. Single-origin coffee vegan helvetica chartreuse deep v.\", \"Lumbersexual chicharrones jean shorts bicycle rights brooklyn. Typewriter fingerstache cold-pressed forage ugh ramps food truck. Green juice yuccie wes anderson vinegar pug blue bottle photo booth.\", \"Wes anderson shabby chic 90's organic marfa. Mumblecore direct trade locavore. Pop-up ethical put a bird on it hammock godard. Bitters organic freegan cornhole hammock cardigan tattooed try-hard.\", \"Pop-up tousled crucifix truffaut occupy hammock. Mixtape trust fund shabby chic. Before they sold out intelligentsia fingerstache chia aesthetic lo-fi pop-up leggings. Vinegar kale chips kombucha kickstarter meggings disrupt chambray flannel.\"]"], ["likes", 0], ["blogger_id", 3], ["destination_id", 32], ["created_at", "2018-09-27 14:43:20.527395"], ["updated_at", "2018-09-27 14:43:20.527395"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Blue bottle you probably haven't heard of them roof."], ["content", "[\"Put a bird on it 8-bit deep v. Beard paleo chia synth before they sold out aesthetic helvetica keffiyeh. Jean shorts wolf mumblecore kinfolk. Heirloom sustainable try-hard. Paleo master actually shoreditch chicharrones kale chips.\", \"Iphone waistcoat readymade. Plaid crucifix slow-carb. Loko mixtape deep v marfa whatever vice. Kitsch organic vinyl godard. Tattooed lomo direct trade semiotics pabst.\", \"Selvage cray heirloom. 90's organic aesthetic. Deep v williamsburg gentrify lomo. Ramps artisan cardigan keytar.\", \"Irony deep v pabst humblebrag muggle magic. Messenger bag pickled meditation skateboard. Squid 3 wolf moon fanny pack. Fanny pack pop-up squid small batch pork belly. Street 8-bit aesthetic hammock brunch pug quinoa cleanse.\"]"], ["likes", 0], ["blogger_id", 3], ["destination_id", 24], ["created_at", "2018-09-27 14:43:20.553975"], ["updated_at", "2018-09-27 14:43:20.553975"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Shoreditch schlitz hammock five dollar toast ugh yuccie letterpress."], ["content", "[\"Farm-to-table tilde tumblr. Irony authentic pour-over +1. Food truck pickled retro farm-to-table humblebrag polaroid.\", \"Cleanse craft beer fashion axe schlitz pickled. Next level wolf distillery. Slow-carb literally flannel cronut organic gluten-free squid. Small batch hammock poutine tilde keytar cred crucifix. Selvage kombucha migas twee quinoa food truck hashtag diy.\", \"Raw denim williamsburg cray authentic next level. Hella brooklyn carry sriracha. Church-key pickled blue bottle beard put a bird on it locavore farm-to-table.\", \"Banh mi mumblecore pabst 8-bit bicycle rights trust fund. Pickled viral bicycle rights distillery dreamcatcher schlitz. Food truck heirloom selfies squid pork belly banjo post-ironic. Dreamcatcher schlitz 8-bit. Cold-pressed 90's health vinegar pug.\"]"], ["likes", 0], ["blogger_id", 3], ["destination_id", 38], ["created_at", "2018-09-27 14:43:20.583063"], ["updated_at", "2018-09-27 14:43:20.583063"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Augustine Hand"], ["bio", "Helvetica xoxo forage goth. Ramps kombucha health pop-up organic. Etsy biodiesel drinking bespoke."], ["age", 76], ["created_at", "2018-09-27 14:43:20.592449"], ["updated_at", "2018-09-27 14:43:20.592449"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Cred tacos fingerstache vinegar."], ["content", "[\"Cleanse schlitz thundercats fanny pack tousled. Vegan brooklyn photo booth. Hammock paleo letterpress art party flexitarian kombucha yolo. Single-origin coffee humblebrag viral. Chicharrones tacos flexitarian banjo vinegar paleo vice knausgaard.\", \"Try-hard viral sriracha. Typewriter chartreuse ramps beard. Stumptown knausgaard flexitarian poutine cornhole. Pabst heirloom pinterest vice.\", \"Skateboard kitsch chia. Blue bottle sriracha wolf. Diy scenester thundercats.\", \"Literally selfies street vinegar. Quinoa narwhal williamsburg. Skateboard squid photo booth organic vinegar thundercats disrupt cliche. Aesthetic typewriter organic green juice retro mixtape. Irony authentic put a bird on it roof brunch.\"]"], ["likes", 0], ["blogger_id", 4], ["destination_id", 30], ["created_at", "2018-09-27 14:43:20.609414"], ["updated_at", "2018-09-27 14:43:20.609414"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Flexitarian forage trust fund before they sold out muggle magic."], ["content", "[\"Small batch occupy pickled franzen. Stumptown kinfolk blog kickstarter truffaut. Single-origin coffee wayfarers brooklyn neutra locavore humblebrag. Drinking tilde tumblr retro. Truffaut fanny pack echo direct trade.\", \"Paleo pug deep v. Kogi street jean shorts kitsch shabby chic freegan lomo quinoa. Fingerstache master sriracha wolf food truck cronut keffiyeh.\", \"Yolo whatever franzen shoreditch. Single-origin coffee flannel venmo yolo vice viral gluten-free. Wayfarers lumbersexual park selvage.\", \"Kinfolk banjo yolo kogi brooklyn vegan xoxo. Loko blog mixtape sartorial viral actually pbr&b pork belly. Scenester slow-carb microdosing five dollar toast banjo synth. Pug swag irony jean shorts bushwick wolf farm-to-table. Farm-to-table semiotics disrupt gastropub schlitz godard.\"]"], ["likes", 0], ["blogger_id", 4], ["destination_id", 8], ["created_at", "2018-09-27 14:43:20.626746"], ["updated_at", "2018-09-27 14:43:20.626746"]]
+  [1m[35m (22.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Health mlkshk drinking butcher mixtape marfa hoodie."], ["content", "[\"Polaroid leggings pinterest +1 banh mi diy. Gluten-free scenester locavore. Authentic vinyl polaroid cleanse loko. Occupy crucifix pabst.\", \"Kombucha waistcoat cleanse literally umami plaid chartreuse. Cardigan readymade carry occupy leggings. Tumblr crucifix shoreditch try-hard.\", \"Offal pork belly muggle magic pickled paleo sartorial literally plaid. Kitsch mumblecore cray small batch banjo. Drinking kickstarter kogi hoodie vinegar truffaut wolf squid.\", \"Kogi vice jean shorts. Sriracha tofu letterpress flexitarian microdosing. Cronut locavore echo. Cronut artisan everyday meggings gluten-free twee hella.\"]"], ["likes", 0], ["blogger_id", 4], ["destination_id", 49], ["created_at", "2018-09-27 14:43:20.658380"], ["updated_at", "2018-09-27 14:43:20.658380"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sriracha slow-carb freegan."], ["content", "[\"Cronut disrupt aesthetic loko banh mi cleanse muggle magic. Single-origin coffee viral swag. Raw denim whatever marfa selfies try-hard locavore pinterest.\", \"Occupy williamsburg cornhole irony. Mustache chartreuse schlitz meh five dollar toast slow-carb. Banh mi meggings migas pitchfork. Banh mi semiotics literally ethical mumblecore kickstarter wayfarers.\", \"Church-key cliche hoodie before they sold out distillery offal. Kickstarter jean shorts lo-fi fixie before they sold out. Distillery five dollar toast food truck twee green juice freegan kogi shoreditch. Selfies bicycle rights locavore hoodie. Blue bottle heirloom skateboard.\", \"Celiac vhs tofu shoreditch loko. Flexitarian banjo taxidermy literally direct trade offal cardigan lo-fi. Tote bag bespoke hoodie selfies kombucha chicharrones wes anderson. Trust fund mustache cronut fixie yolo. Tacos whatever helvetica shabby chic blue bottle poutine kickstarter.\"]"], ["likes", 0], ["blogger_id", 4], ["destination_id", 2], ["created_at", "2018-09-27 14:43:20.694895"], ["updated_at", "2018-09-27 14:43:20.694895"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Clarine Bergnaum"], ["bio", "Raw denim ugh pbr&b retro. +1 hashtag taxidermy gentrify biodiesel. Readymade whatever flannel venmo mustache pinterest. Plaid photo booth stumptown squid chambray meggings authentic. Shabby chic occupy +1 vhs xoxo yolo knausgaard."], ["age", 45], ["created_at", "2018-09-27 14:43:20.710916"], ["updated_at", "2018-09-27 14:43:20.710916"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ugh dreamcatcher art party pinterest post-ironic vegan."], ["content", "[\"Twee vhs waistcoat chambray franzen cardigan sriracha poutine. Paleo kickstarter semiotics umami crucifix. Kinfolk next level humblebrag marfa before they sold out.\", \"90's intelligentsia kitsch flannel bushwick. Swag narwhal cleanse master chartreuse selfies chillwave. Blog master lomo.\", \"Heirloom green juice yolo leggings bicycle rights park yr. Blue bottle squid godard. Tofu lomo listicle chambray pork belly literally xoxo keffiyeh. Wes anderson actually pop-up iphone portland farm-to-table post-ironic. Phlogiston photo booth vice offal migas.\", \"Seitan hoodie ethical brooklyn pickled drinking sartorial 8-bit. Salvia stumptown neutra listicle hashtag tofu goth. Truffaut retro typewriter tilde wayfarers muggle magic.\"]"], ["likes", 0], ["blogger_id", 5], ["destination_id", 49], ["created_at", "2018-09-27 14:43:20.738460"], ["updated_at", "2018-09-27 14:43:20.738460"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tumblr microdosing bitters."], ["content", "[\"Tofu everyday typewriter kinfolk keffiyeh chambray ethical. Heirloom tofu umami selfies roof poutine cold-pressed. Sartorial locavore taxidermy.\", \"Kitsch lomo celiac. Single-origin coffee heirloom meditation food truck five dollar toast knausgaard. Keffiyeh offal mumblecore tumblr fashion axe direct trade biodiesel. Kogi schlitz cray neutra semiotics cred direct trade hashtag. Offal mumblecore lomo neutra aesthetic austin.\", \"Banjo blog austin. Diy small batch tousled. Health mumblecore paleo tacos.\", \"Umami hoodie xoxo thundercats church-key pitchfork. Goth ethical keytar. Meggings xoxo before they sold out distillery mlkshk pabst kogi messenger bag. Farm-to-table williamsburg crucifix cardigan keffiyeh before they sold out tousled. Post-ironic cleanse waistcoat letterpress tattooed.\"]"], ["likes", 0], ["blogger_id", 5], ["destination_id", 35], ["created_at", "2018-09-27 14:43:20.760243"], ["updated_at", "2018-09-27 14:43:20.760243"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Typewriter bicycle rights crucifix synth offal bushwick."], ["content", "[\"Forage master direct trade small batch venmo. Tote bag cardigan locavore green juice beard irony lumbersexual five dollar toast. Salvia leggings lomo twee yolo williamsburg keffiyeh.\", \"Crucifix tote bag williamsburg neutra health microdosing bitters raw denim. Disrupt pitchfork butcher occupy post-ironic pork belly slow-carb banh mi. Lo-fi food truck microdosing skateboard migas semiotics photo booth. Pop-up schlitz synth twee gluten-free fingerstache hammock.\", \"Kale chips messenger bag brunch. Helvetica fanny pack intelligentsia salvia. Etsy venmo photo booth hoodie hammock trust fund disrupt typewriter. Pug put a bird on it post-ironic pinterest lomo thundercats shabby chic banh mi.\", \"Keytar deep v gluten-free you probably haven't heard of them yolo etsy. Paleo park cardigan tousled art party letterpress. Messenger bag kickstarter cardigan microdosing seitan keytar tote bag selvage.\"]"], ["likes", 0], ["blogger_id", 5], ["destination_id", 49], ["created_at", "2018-09-27 14:43:20.820649"], ["updated_at", "2018-09-27 14:43:20.820649"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dr. Melvin Schiller"], ["bio", "Single-origin coffee umami vegan flexitarian small batch jean shorts listicle gentrify. Chartreuse ramps hammock gastropub sartorial synth. Kickstarter shoreditch roof narwhal taxidermy. Selvage migas slow-carb drinking swag yuccie chartreuse."], ["age", 24], ["created_at", "2018-09-27 14:43:20.828819"], ["updated_at", "2018-09-27 14:43:20.828819"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Hoodie authentic pbr&b pickled cleanse."], ["content", "[\"Kickstarter plaid hammock heirloom. Pitchfork disrupt iphone next level cardigan. Crucifix cardigan bitters stumptown poutine pitchfork dreamcatcher. Sustainable vegan slow-carb. Sartorial chicharrones ramps 90's ennui cray park.\", \"Kombucha ramps swag pop-up iphone twee neutra. Chia offal messenger bag microdosing listicle. Organic williamsburg gluten-free fanny pack chia post-ironic.\", \"Food truck before they sold out selfies carry single-origin coffee pickled viral williamsburg. Pork belly banh mi bespoke green juice muggle magic. Trust fund pinterest pitchfork brooklyn vinyl vice schlitz hella. Meh cleanse shoreditch ramps. Ugh echo gastropub.\", \"Bushwick iphone carry. Fashion axe bicycle rights semiotics chambray tilde green juice lomo kickstarter. Next level distillery kombucha meditation.\"]"], ["likes", 0], ["blogger_id", 6], ["destination_id", 17], ["created_at", "2018-09-27 14:43:20.861650"], ["updated_at", "2018-09-27 14:43:20.861650"]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Wayfarers iphone fingerstache pork belly tote bag locavore chia."], ["content", "[\"Polaroid microdosing 3 wolf moon. Listicle 3 wolf moon loko retro polaroid twee goth everyday. Tofu lo-fi literally trust fund lumbersexual brooklyn.\", \"Vinyl chartreuse typewriter deep v godard literally post-ironic 3 wolf moon. Pop-up try-hard master. Post-ironic authentic schlitz chambray letterpress butcher venmo helvetica. Cray hoodie brunch chicharrones kitsch ethical. Occupy ennui quinoa.\", \"Leggings mustache kinfolk. Post-ironic brooklyn cronut scenester tofu health typewriter. Loko listicle wayfarers cray photo booth twee offal knausgaard.\", \"Lo-fi plaid vhs kogi direct trade skateboard. Pour-over tote bag cronut gastropub hoodie. Butcher normcore sustainable flannel. Banh mi heirloom intelligentsia deep v literally scenester shoreditch mustache. Ethical gastropub xoxo.\"]"], ["likes", 0], ["blogger_id", 6], ["destination_id", 49], ["created_at", "2018-09-27 14:43:20.895263"], ["updated_at", "2018-09-27 14:43:20.895263"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Polaroid single-origin coffee chia messenger bag wayfarers brooklyn pinterest echo."], ["content", "[\"Banjo banh mi health retro messenger bag fixie. Goth pabst fashion axe celiac single-origin coffee. Pop-up franzen gastropub biodiesel tacos stumptown. Kale chips pop-up butcher photo booth paleo 90's semiotics yuccie. Deep v forage pork belly authentic meh shoreditch readymade.\", \"Ramps park distillery roof pbr&b gastropub wolf post-ironic. Bitters celiac you probably haven't heard of them meh. Kombucha franzen vhs food truck chicharrones.\", \"Portland authentic pbr&b. Celiac fashion axe mustache tote bag tumblr drinking. Vice twee pour-over bitters.\", \"Schlitz bushwick hoodie truffaut cronut shoreditch shabby chic. Vegan chia kale chips selfies schlitz thundercats gluten-free. Small batch kitsch vegan twee. Everyday next level put a bird on it raw denim.\"]"], ["likes", 0], ["blogger_id", 6], ["destination_id", 3], ["created_at", "2018-09-27 14:43:20.916985"], ["updated_at", "2018-09-27 14:43:20.916985"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (3.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Messenger bag farm-to-table post-ironic."], ["content", "[\"Forage single-origin coffee godard. Sriracha ugh roof intelligentsia austin hoodie pickled. Yolo photo booth gluten-free austin readymade. Vhs etsy tousled wes anderson vinyl heirloom lo-fi.\", \"Stumptown biodiesel locavore taxidermy sriracha plaid kogi intelligentsia. Messenger bag bicycle rights roof narwhal raw denim lo-fi crucifix knausgaard. Distillery occupy godard carry neutra. Post-ironic offal bitters bicycle rights tumblr deep v biodiesel trust fund.\", \"Listicle ethical hoodie. Ethical mumblecore pour-over roof literally cliche. Single-origin coffee bespoke yr brooklyn taxidermy occupy fingerstache seitan.\", \"Distillery cray taxidermy etsy tilde chambray sustainable beard. Disrupt blue bottle kombucha paleo park crucifix skateboard cronut. Messenger bag fanny pack raw denim.\"]"], ["likes", 0], ["blogger_id", 6], ["destination_id", 40], ["created_at", "2018-09-27 14:43:20.940245"], ["updated_at", "2018-09-27 14:43:20.940245"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Everyday photo booth vinyl pour-over kickstarter."], ["content", "[\"Polaroid lumbersexual roof salvia. Loko post-ironic celiac freegan wes anderson meditation portland. Sartorial raw denim knausgaard occupy. Poutine xoxo pickled. Cardigan flexitarian tattooed plaid pabst paleo meggings shabby chic.\", \"Umami organic flexitarian cardigan lomo. Meggings keytar kale chips sriracha tousled. Cold-pressed flannel mlkshk before they sold out intelligentsia. Whatever brooklyn crucifix artisan sriracha try-hard next level chia.\", \"Goth art party bespoke paleo pop-up. Neutra hammock master brunch. Post-ironic leggings heirloom. Occupy sustainable fingerstache pour-over. Pitchfork actually goth humblebrag hella fanny pack.\", \"Vinyl knausgaard pickled locavore tumblr franzen hammock. Swag offal crucifix vhs biodiesel wolf. Knausgaard viral single-origin coffee next level gastropub bicycle rights austin.\"]"], ["likes", 0], ["blogger_id", 6], ["destination_id", 9], ["created_at", "2018-09-27 14:43:20.968002"], ["updated_at", "2018-09-27 14:43:20.968002"]]
+  [1m[35m (31.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Humblebrag messenger bag flexitarian tumblr ethical shoreditch."], ["content", "[\"Listicle godard post-ironic asymmetrical muggle magic banh mi artisan meditation. Knausgaard bicycle rights waistcoat heirloom 90's occupy bespoke. Wayfarers tattooed farm-to-table microdosing.\", \"Food truck salvia trust fund yr asymmetrical letterpress organic raw denim. Swag church-key salvia venmo synth roof craft beer skateboard. Fingerstache microdosing pop-up vegan wolf tacos yr. Gastropub brooklyn venmo wolf.\", \"3 wolf moon waistcoat gluten-free xoxo literally. Tofu carry locavore single-origin coffee quinoa vinegar. Offal banjo pabst.\", \"Forage retro keytar tofu offal microdosing pickled. Kinfolk semiotics you probably haven't heard of them. Umami you probably haven't heard of them bespoke farm-to-table letterpress migas tousled sartorial. Neutra health cray diy vegan portland freegan.\"]"], ["likes", 0], ["blogger_id", 6], ["destination_id", 21], ["created_at", "2018-09-27 14:43:21.021340"], ["updated_at", "2018-09-27 14:43:21.021340"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thanh Auer MD"], ["bio", "Distillery bespoke twee fixie cold-pressed drinking tacos. Typewriter schlitz tattooed polaroid goth narwhal master. Everyday farm-to-table swag deep v. Chillwave 3 wolf moon truffaut marfa mumblecore kombucha thundercats."], ["age", 85], ["created_at", "2018-09-27 14:43:21.070792"], ["updated_at", "2018-09-27 14:43:21.070792"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Health vice swag austin 8-bit shoreditch offal locavore."], ["content", "[\"Roof narwhal quinoa austin. Five dollar toast yr kombucha freegan echo. Banh mi pinterest thundercats distillery truffaut whatever cred synth. Banjo selvage godard.\", \"Vinegar crucifix +1. Tote bag put a bird on it cardigan. Yuccie chillwave brooklyn cronut schlitz locavore. Drinking roof pbr&b.\", \"Pbr&b literally readymade vinyl mumblecore photo booth small batch mlkshk. Vegan readymade retro. Direct trade next level venmo twee. Vinyl meggings vinegar waistcoat craft beer.\", \"Skateboard ugh lumbersexual. Whatever scenester chillwave squid tattooed small batch five dollar toast. Distillery street everyday green juice pork belly. Tacos flannel pug selvage brooklyn.\"]"], ["likes", 0], ["blogger_id", 7], ["destination_id", 40], ["created_at", "2018-09-27 14:43:21.090272"], ["updated_at", "2018-09-27 14:43:21.090272"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Echo keffiyeh mixtape authentic retro."], ["content", "[\"Wayfarers fanny pack raw denim kogi 90's cronut diy chia. Green juice health hoodie schlitz gentrify. Flexitarian beard pork belly.\", \"Flexitarian meditation hashtag meggings vhs park. Pork belly tousled semiotics. Distillery ethical ramps health sartorial semiotics banh mi listicle. Food truck cliche portland.\", \"Hammock park 90's iphone polaroid salvia. Pickled vinyl disrupt occupy venmo seitan whatever. Farm-to-table aesthetic craft beer synth occupy.\", \"Narwhal mlkshk craft beer kinfolk. Aesthetic microdosing chicharrones selvage. 3 wolf moon food truck muggle magic bitters pabst small batch normcore. Fingerstache marfa austin blog freegan everyday. Kickstarter fanny pack wayfarers five dollar toast.\"]"], ["likes", 0], ["blogger_id", 7], ["destination_id", 27], ["created_at", "2018-09-27 14:43:21.118133"], ["updated_at", "2018-09-27 14:43:21.118133"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Iphone umami tattooed cleanse pbr&b direct trade before they sold out."], ["content", "[\"Forage freegan artisan lomo. Kogi tilde scenester slow-carb small batch. Plaid taxidermy wes anderson small batch kogi mustache messenger bag. Direct trade stumptown kinfolk pitchfork helvetica.\", \"Twee banjo kale chips. Keffiyeh cliche direct trade chillwave mlkshk post-ironic roof. Jean shorts fingerstache squid aesthetic actually everyday listicle goth. Portland kogi raw denim mlkshk 8-bit literally. Direct trade vinegar selfies cleanse banh mi disrupt fingerstache whatever.\", \"90's pabst selfies irony skateboard. Tacos beard fingerstache shoreditch craft beer actually kitsch sartorial. Vice small batch polaroid 90's fingerstache raw denim.\", \"Sriracha poutine ethical. Cardigan vegan sartorial fanny pack kogi. Fashion axe tacos vice artisan banh mi. Lumbersexual bespoke everyday. Ugh pabst distillery health cliche pbr&b.\"]"], ["likes", 0], ["blogger_id", 7], ["destination_id", 25], ["created_at", "2018-09-27 14:43:21.141772"], ["updated_at", "2018-09-27 14:43:21.141772"]]
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Meh lomo leggings direct trade williamsburg you probably haven't heard of them."], ["content", "[\"Kombucha 90's echo park williamsburg vhs. Shabby chic wayfarers irony chartreuse organic. Occupy carry whatever roof. Lomo muggle magic chambray tacos taxidermy.\", \"Swag squid cray franzen flexitarian fanny pack artisan kogi. Goth kitsch fashion axe brooklyn microdosing mumblecore biodiesel. Shoreditch shabby chic swag keytar tote bag messenger bag vegan.\", \"Xoxo hoodie bespoke vinegar flexitarian flannel. Franzen brunch twee actually trust fund. Single-origin coffee 90's five dollar toast post-ironic kickstarter +1. Marfa semiotics leggings single-origin coffee ethical migas wes anderson sriracha. Meggings freegan occupy diy synth tumblr vice venmo.\", \"Xoxo forage gluten-free brunch beard swag lomo messenger bag. Typewriter messenger bag disrupt hammock tumblr. Pitchfork hashtag pour-over kinfolk. Pabst ethical yuccie blog lo-fi tofu irony portland. Pickled shoreditch tousled craft beer.\"]"], ["likes", 0], ["blogger_id", 7], ["destination_id", 21], ["created_at", "2018-09-27 14:43:21.207118"], ["updated_at", "2018-09-27 14:43:21.207118"]]
+  [1m[35m (23.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Daniel Wolf"], ["bio", "Kinfolk hammock chambray bushwick. Tilde gastropub bitters pabst cardigan raw denim. Cardigan vinegar yolo."], ["age", 86], ["created_at", "2018-09-27 14:43:21.299278"], ["updated_at", "2018-09-27 14:43:21.299278"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Typewriter pabst cornhole pickled mixtape bitters church-key gentrify."], ["content", "[\"Franzen bicycle rights hoodie organic fanny pack. Ethical pinterest crucifix semiotics chicharrones. Cleanse distillery literally kogi pinterest slow-carb stumptown single-origin coffee.\", \"Meh slow-carb flexitarian gentrify plaid. Synth portland williamsburg fashion axe humblebrag chicharrones. Crucifix poutine kale chips +1 yr. Retro keffiyeh sartorial salvia semiotics. Ethical yuccie you probably haven't heard of them bushwick cray organic gluten-free.\", \"Shabby chic umami thundercats. Cliche skateboard kale chips godard put a bird on it shabby chic artisan helvetica. Iphone cornhole microdosing post-ironic. Bushwick migas seitan ramps chillwave wayfarers.\", \"Messenger bag portland shabby chic. Keytar cardigan truffaut narwhal gentrify. Bespoke sartorial messenger bag wes anderson blue bottle wolf mixtape. 8-bit 90's poutine sustainable lumbersexual gastropub. Narwhal banh mi cleanse gentrify brooklyn venmo.\"]"], ["likes", 0], ["blogger_id", 8], ["destination_id", 48], ["created_at", "2018-09-27 14:43:21.320918"], ["updated_at", "2018-09-27 14:43:21.320918"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tattooed keytar leggings."], ["content", "[\"Organic hammock butcher polaroid leggings actually. Jean shorts portland cold-pressed occupy ethical. Quinoa bitters single-origin coffee umami brooklyn raw denim forage.\", \"Echo meditation normcore selfies cardigan. Cronut locavore vegan direct trade. Cardigan marfa +1 williamsburg hoodie pabst celiac. Vegan photo booth viral hashtag. Echo blue bottle freegan kinfolk put a bird on it.\", \"Fingerstache hashtag paleo trust fund vinegar cleanse pitchfork. Irony bitters food truck fingerstache wolf microdosing chartreuse. Gastropub offal whatever small batch marfa.\", \"Bespoke keytar umami. Flexitarian kale chips ugh mlkshk. +1 bushwick celiac tilde vinegar squid.\"]"], ["likes", 0], ["blogger_id", 8], ["destination_id", 35], ["created_at", "2018-09-27 14:43:21.333930"], ["updated_at", "2018-09-27 14:43:21.333930"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Venmo microdosing keytar lomo fixie shabby chic migas wes anderson."], ["content", "[\"Listicle polaroid cronut shabby chic phlogiston master. Viral plaid pork belly food truck. Pour-over keytar chicharrones poutine +1 pabst. Twee tumblr direct trade raw denim offal kombucha freegan. Irony street authentic actually vice post-ironic.\", \"Single-origin coffee bicycle rights pour-over ramps everyday taxidermy. Five dollar toast bicycle rights pour-over pug pbr&b. Leggings mumblecore pinterest tumblr. Schlitz swag letterpress flexitarian chartreuse squid raw denim. Hoodie migas irony.\", \"Echo trust fund brooklyn austin distillery chicharrones. Truffaut migas semiotics hashtag art party plaid ethical tofu. Artisan pork belly meh cardigan chillwave kickstarter.\", \"Cronut dreamcatcher health gastropub flexitarian etsy kogi. Park flannel williamsburg. Cliche intelligentsia brunch bitters paleo normcore blue bottle. Pabst phlogiston pickled five dollar toast. Umami brunch pour-over vinyl try-hard.\"]"], ["likes", 0], ["blogger_id", 8], ["destination_id", 48], ["created_at", "2018-09-27 14:43:21.349448"], ["updated_at", "2018-09-27 14:43:21.349448"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Quinoa wayfarers health knausgaard."], ["content", "[\"Twee everyday gentrify chia offal tacos intelligentsia mlkshk. Direct trade kickstarter ennui cornhole synth asymmetrical. Flexitarian chillwave try-hard craft beer bicycle rights.\", \"Wayfarers yr tumblr tote bag meggings health stumptown. Banjo post-ironic cray vinegar single-origin coffee. Thundercats roof migas 90's everyday polaroid. Muggle magic migas butcher whatever mumblecore skateboard ethical. Direct trade tote bag chillwave poutine vinyl whatever.\", \"Keytar vhs literally next level green juice. Kickstarter five dollar toast wayfarers artisan normcore biodiesel. Bespoke sustainable tofu selfies. 8-bit truffaut retro meh cronut intelligentsia kombucha ennui.\", \"Diy schlitz banjo bespoke. Hoodie authentic ugh microdosing 3 wolf moon tilde. Intelligentsia health sustainable pbr&b raw denim yolo venmo kogi. Roof etsy sustainable helvetica listicle plaid polaroid chartreuse.\"]"], ["likes", 0], ["blogger_id", 8], ["destination_id", 44], ["created_at", "2018-09-27 14:43:21.371544"], ["updated_at", "2018-09-27 14:43:21.371544"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Heide Marquardt"], ["bio", "Sriracha pop-up plaid lo-fi tattooed. Forage kombucha irony cardigan celiac schlitz bicycle rights. Cleanse synth pabst goth kombucha."], ["age", 59], ["created_at", "2018-09-27 14:43:21.378988"], ["updated_at", "2018-09-27 14:43:21.378988"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "You probably haven't heard of them semiotics tote bag 3 wolf moon."], ["content", "[\"Readymade twee freegan hammock chicharrones phlogiston. Farm-to-table twee raw denim. Vice before they sold out typewriter. Dreamcatcher butcher kombucha scenester mumblecore cardigan flexitarian.\", \"Bicycle rights swag lomo shabby chic chartreuse jean shorts celiac post-ironic. Deep v umami cornhole pabst flannel blue bottle. Swag food truck scenester. Kickstarter poutine synth.\", \"Xoxo +1 stumptown church-key. Pug pabst pickled fingerstache sriracha. Helvetica park vinegar hoodie artisan single-origin coffee bespoke wes anderson. +1 pabst hammock kombucha marfa. Ugh distillery twee.\", \"Food truck austin beard tacos. Butcher fingerstache flannel. Pour-over next level bicycle rights hammock. Intelligentsia 90's goth sustainable. Pinterest cray tumblr migas.\"]"], ["likes", 0], ["blogger_id", 9], ["destination_id", 34], ["created_at", "2018-09-27 14:43:21.398175"], ["updated_at", "2018-09-27 14:43:21.398175"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Street whatever leggings."], ["content", "[\"Butcher next level blue bottle selvage bushwick. Flexitarian sriracha bitters plaid small batch twee. Post-ironic lomo kombucha vhs.\", \"Fashion axe truffaut roof. Cardigan ennui mumblecore vegan franzen cred vhs. Ennui waistcoat direct trade literally diy synth taxidermy yuccie.\", \"Lumbersexual phlogiston chillwave swag aesthetic. Ethical forage direct trade stumptown literally tumblr squid pop-up. Paleo schlitz butcher.\", \"Chillwave literally 3 wolf moon meh. Squid direct trade phlogiston synth. Disrupt vinegar godard put a bird on it. Marfa pbr&b sustainable tacos normcore hashtag. Literally viral tilde crucifix tote bag tousled small batch etsy.\"]"], ["likes", 0], ["blogger_id", 9], ["destination_id", 35], ["created_at", "2018-09-27 14:43:21.420452"], ["updated_at", "2018-09-27 14:43:21.420452"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Art party occupy +1 cornhole slow-carb."], ["content", "[\"Chartreuse normcore meh migas readymade tumblr heirloom mixtape. Vinyl goth biodiesel marfa. Wayfarers meditation cornhole 3 wolf moon waistcoat.\", \"Master slow-carb keffiyeh try-hard. Phlogiston humblebrag crucifix hammock. Diy sustainable intelligentsia offal polaroid semiotics locavore.\", \"Crucifix put a bird on it plaid neutra authentic blog. Pug fanny pack asymmetrical freegan cold-pressed brunch pinterest shabby chic. Farm-to-table loko direct trade disrupt etsy gastropub banjo.\", \"Twee gentrify paleo 90's church-key everyday marfa. Stumptown cornhole kombucha hammock kitsch. Church-key cardigan lo-fi letterpress 8-bit austin. Trust fund organic mustache viral photo booth tumblr.\"]"], ["likes", 0], ["blogger_id", 9], ["destination_id", 25], ["created_at", "2018-09-27 14:43:21.434682"], ["updated_at", "2018-09-27 14:43:21.434682"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ethical truffaut lo-fi."], ["content", "[\"Shoreditch cornhole blue bottle loko paleo kale chips lomo ennui. Fanny pack microdosing phlogiston migas forage yolo actually helvetica. Keytar poutine lomo waistcoat aesthetic wayfarers meditation. +1 ugh cornhole meh.\", \"Hoodie intelligentsia fanny pack. Stumptown blue bottle shabby chic meh whatever sustainable next level cred. Locavore twee tousled raw denim iphone gastropub.\", \"Photo booth portland tote bag. Cliche cred art party keytar. Keytar paleo microdosing dreamcatcher waistcoat tumblr blog selfies. Vice slow-carb tattooed. Selvage pinterest craft beer gastropub hella waistcoat master.\", \"Twee fixie viral ugh leggings letterpress portland. Whatever kickstarter pour-over pop-up. Blue bottle knausgaard post-ironic dreamcatcher. Kinfolk artisan cliche pork belly street venmo letterpress heirloom.\"]"], ["likes", 0], ["blogger_id", 9], ["destination_id", 36], ["created_at", "2018-09-27 14:43:21.445336"], ["updated_at", "2018-09-27 14:43:21.445336"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Anette Dibbert"], ["bio", "Food truck flexitarian letterpress disrupt skateboard raw denim pickled. Keytar fashion axe retro farm-to-table irony. Kogi marfa crucifix celiac street pop-up migas. Vinyl pbr&b fingerstache distillery leggings."], ["age", 85], ["created_at", "2018-09-27 14:43:21.454738"], ["updated_at", "2018-09-27 14:43:21.454738"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Meh cred cronut whatever brunch kombucha viral."], ["content", "[\"Chartreuse selvage viral bicycle rights cornhole ugh chillwave. Flannel mustache franzen hashtag sustainable kombucha. Chia pinterest loko park butcher hammock. Roof offal vinegar +1 meh polaroid.\", \"Pabst beard synth williamsburg dreamcatcher ugh iphone tofu. Shabby chic chia shoreditch slow-carb pug. Kickstarter tote bag fingerstache vhs chicharrones.\", \"Pitchfork street master venmo phlogiston. Viral cred helvetica. Flannel single-origin coffee messenger bag wes anderson poutine next level. Everyday locavore shoreditch try-hard schlitz keffiyeh. Knausgaard chillwave direct trade squid cornhole.\", \"Listicle stumptown meditation waistcoat truffaut shoreditch muggle magic whatever. Fingerstache gentrify vice humblebrag. Tumblr hashtag tote bag gastropub lomo.\"]"], ["likes", 0], ["blogger_id", 10], ["destination_id", 54], ["created_at", "2018-09-27 14:43:21.470202"], ["updated_at", "2018-09-27 14:43:21.470202"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Fingerstache kombucha cliche health ramps fanny pack meditation fixie."], ["content", "[\"Chillwave everyday five dollar toast tumblr. Flannel seitan salvia bushwick. Whatever swag pbr&b neutra tilde. Austin actually pickled. Keytar distillery tacos.\", \"Vinegar semiotics actually chambray yuccie vice. Chambray chartreuse tilde pabst leggings sriracha. Vhs +1 listicle polaroid migas cliche kale chips.\", \"Asymmetrical farm-to-table five dollar toast sriracha venmo. Williamsburg plaid selvage normcore. Paleo kogi seitan iphone trust fund cold-pressed chartreuse heirloom. Beard carry tumblr heirloom. Pbr&b street plaid.\", \"Cray +1 health street humblebrag chillwave tote bag butcher. Shoreditch leggings normcore tacos. Pork belly viral fashion axe phlogiston five dollar toast bitters. Xoxo +1 tilde cornhole knausgaard carry austin. Beard flexitarian shabby chic xoxo mustache biodiesel farm-to-table keytar.\"]"], ["likes", 0], ["blogger_id", 10], ["destination_id", 53], ["created_at", "2018-09-27 14:43:21.484322"], ["updated_at", "2018-09-27 14:43:21.484322"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Gentrify bitters you probably haven't heard of them flexitarian chia slow-carb kickstarter selvage."], ["content", "[\"Ugh narwhal letterpress cornhole. Typewriter brunch williamsburg pitchfork salvia tousled diy twee. Goth cred +1 twee humblebrag distillery. Pickled lomo chia twee neutra pork belly readymade 8-bit. Chia artisan keytar.\", \"Fingerstache fashion axe whatever. Squid chicharrones diy yolo kickstarter. Deep v flexitarian gentrify.\", \"Salvia actually selfies. Drinking organic seitan hoodie art party muggle magic iphone sriracha. Art party portland pickled banjo pop-up. Humblebrag wayfarers ethical sriracha. Ramps keffiyeh gluten-free.\", \"Actually pbr&b master. Small batch vegan xoxo umami listicle before they sold out. Asymmetrical stumptown selfies neutra squid. Vice iphone polaroid next level pabst. Messenger bag yr knausgaard schlitz asymmetrical leggings pabst.\"]"], ["likes", 0], ["blogger_id", 10], ["destination_id", 40], ["created_at", "2018-09-27 14:43:21.494539"], ["updated_at", "2018-09-27 14:43:21.494539"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Cred meh tote bag bushwick kogi."], ["content", "[\"Slow-carb literally butcher. Flexitarian sustainable messenger bag cred pinterest. 8-bit messenger bag narwhal cliche forage bushwick stumptown. Synth goth cred vinyl microdosing chambray. Cardigan lumbersexual yr banh mi brooklyn park.\", \"Phlogiston you probably haven't heard of them lo-fi. Williamsburg keffiyeh blog selfies shabby chic kitsch. Yuccie shabby chic helvetica direct trade next level raw denim craft beer.\", \"Literally butcher tousled locavore. Loko wolf fashion axe viral +1 sriracha wayfarers cray. Meh 3 wolf moon whatever cray portland pitchfork normcore.\", \"Cronut semiotics yr tilde godard chia kitsch. Seitan banh mi fashion axe health distillery offal deep v. Diy flannel small batch fixie lumbersexual wes anderson ethical offal. Migas beard umami echo. Selvage chambray kombucha roof keytar swag distillery next level.\"]"], ["likes", 0], ["blogger_id", 10], ["destination_id", 23], ["created_at", "2018-09-27 14:43:21.507700"], ["updated_at", "2018-09-27 14:43:21.507700"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (1.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Normcore intelligentsia phlogiston keffiyeh goth."], ["content", "[\"90's green juice plaid iphone beard. Single-origin coffee disrupt bitters. Forage schlitz bitters farm-to-table. Iphone before they sold out keytar sriracha cliche tacos crucifix brunch. Celiac stumptown ennui kogi heirloom 3 wolf moon pop-up.\", \"Small batch deep v listicle phlogiston actually. Marfa flannel fanny pack everyday beard. Helvetica mlkshk occupy beard retro bespoke selvage flannel.\", \"Neutra skateboard art party godard polaroid venmo. Offal pabst cleanse polaroid pop-up narwhal. Seitan thundercats put a bird on it fingerstache. Vhs knausgaard quinoa shoreditch.\", \"Cliche lumbersexual +1 pickled tousled skateboard plaid. Hoodie tousled put a bird on it disrupt. Direct trade tofu yuccie before they sold out.\"]"], ["likes", 0], ["blogger_id", 10], ["destination_id", 7], ["created_at", "2018-09-27 14:43:21.532640"], ["updated_at", "2018-09-27 14:43:21.532640"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bloggers" ("name", "bio", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Normand Brakus"], ["bio", "Carry twee locavore. Forage raw denim pour-over fixie brooklyn. Flexitarian pour-over intelligentsia artisan fixie literally ennui. Cray retro craft beer slow-carb neutra ethical. Xoxo pitchfork beard fanny pack."], ["age", 62], ["created_at", "2018-09-27 14:43:21.549641"], ["updated_at", "2018-09-27 14:43:21.549641"]]
+  [1m[35m (23.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (3.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Seitan offal kitsch."], ["content", "[\"Ennui wolf forage microdosing truffaut meditation bicycle rights wes anderson. Pbr&b plaid vinegar heirloom schlitz ugh franzen truffaut. Yolo carry viral fixie raw denim thundercats flannel. Slow-carb pop-up forage tilde dreamcatcher listicle tattooed brooklyn. Pickled heirloom crucifix flexitarian slow-carb.\", \"Pinterest authentic bicycle rights hella typewriter. Ugh 90's mixtape marfa. Thundercats 3 wolf moon banjo hammock. Tumblr irony iphone heirloom austin chartreuse sartorial.\", \"Typewriter sartorial sustainable godard venmo trust fund bitters. Kinfolk loko diy waistcoat etsy vinyl paleo. Organic etsy hella master messenger bag.\", \"Chambray deep v squid migas echo. Semiotics jean shorts cronut pabst flexitarian readymade next level helvetica. Bushwick hammock cornhole raw denim chambray iphone kale chips.\"]"], ["likes", 0], ["blogger_id", 11], ["destination_id", 41], ["created_at", "2018-09-27 14:43:21.603040"], ["updated_at", "2018-09-27 14:43:21.603040"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDestination Load (2.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "likes", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Wayfarers jean shorts skateboard keffiyeh."], ["content", "[\"Migas irony food truck kale chips. Pbr&b try-hard banh mi listicle viral. Disrupt hammock crucifix food truck.\", \"Kogi portland normcore. Beard five dollar toast iphone. Green juice diy godard mustache neutra chambray.\", \"Paleo chicharrones xoxo vhs shoreditch kombucha semiotics. Waistcoat williamsburg post-ironic five dollar toast keffiyeh food truck cred tacos. Tofu polaroid mustache. Biodiesel trust fund intelligentsia knausgaard bushwick truffaut tattooed.\", \"Photo booth neutra taxidermy heirloom. Mustache trust fund kogi lo-fi quinoa banjo asymmetrical. You probably haven't heard of them pop-up viral selvage tousled. Microdosing chicharrones portland offal.\"]"], ["likes", 0], ["blogger_id", 11], ["destination_id", 21], ["created_at", "2018-09-27 14:43:21.626611"], ["updated_at", "2018-09-27 14:43:21.626611"]]
+  [1m[35m (37.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts" for 127.0.0.1 at 2018-09-27 10:47:21 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 746ms (Views: 727.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:47:23 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mBlogger Load (0.5ms)[0m  [1m[34mSELECT "bloggers".* FROM "bloggers"[0m
+  [1m[36mDestination Load (1.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  Rendered posts/new.html.erb within layouts/application (1512.0ms)
+Completed 200 OK in 1654ms (Views: 1607.3ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-09-27 10:47:42 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l9CwvWjFClySUTJENkpJMs+kEhAAn5mkOt0EcBJWkV13ZmiRYfcraXUQ3CB4TW4g8m9Hbn3k51IhrUz11tU7Zg==", "post"=>{"title"=>"this is the title", "content"=>"this is content", "blogger_id"=>"1", "destination_id"=>"1"}, "commit"=>"Create Post"}
+Unpermitted parameters: :blogger_id, :destination_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 72884ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:48:59 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mBlogger Load (0.3ms)[0m  [1m[34mSELECT "bloggers".* FROM "bloggers"[0m
+  [1m[36mDestination Load (0.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  Rendered posts/new.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 123ms (Views: 88.7ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-09-27 10:49:04 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7+oKFq015yp7CvB31OEornaQ9bLyoGhKBBVhIDDyoVAPXNI6pAfGH5xLHhOa5g+8S1ugzI/bFrwfZSml9HELaw==", "post"=>{"title"=>"asdasd", "content"=>"asdasd", "blogger_id"=>"1", "destination_id"=>"1"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.7ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "asdasd"], ["content", "asdasd"], ["blogger_id", 1], ["destination_id", 1], ["created_at", "2018-09-27 14:49:04.787355"], ["updated_at", "2018-09-27 14:49:04.787355"]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 0], ["updated_at", "2018-09-27 14:49:30.005375"], ["id", 40]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 50645ms (ActiveRecord: 29.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:49:58 -0400
+  
+SyntaxError (/Users/bgonzalez/Desktop/travelatr/app/controllers/posts_controller.rb:11: `@' without identifiers is not allowed as an instance variable name
+/Users/bgonzalez/Desktop/travelatr/app/controllers/posts_controller.rb:11: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/posts_controller.rb:11: `@' without identifiers is not allowed as an instance variable name
+app/controllers/posts_controller.rb:11: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:50:05 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mBlogger Load (0.5ms)[0m  [1m[34mSELECT "bloggers".* FROM "bloggers"[0m
+  [1m[36mDestination Load (7.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  Rendered posts/new.html.erb within layouts/application (98.8ms)
+Completed 200 OK in 291ms (Views: 235.3ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:50:07 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT "bloggers".* FROM "bloggers"[0m
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  Rendered posts/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 131ms (Views: 124.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-09-27 10:50:10 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LGcQG1KLLzjGhcgR4KUSVBin6g7jP9kprCXcoiGqaqHM0cg3W7kODSHEJnWuojVGJWy/cJ5Ep9+3VZQn5SnAmg==", "post"=>{"title"=>"asd", "content"=>"asd", "blogger_id"=>"1", "destination_id"=>"1"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/posts_controller.rb:9:in `create'
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-27 10:55:06 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mBlogger Load (0.6ms)[0m  [1m[34mSELECT "bloggers".* FROM "bloggers"[0m
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  Rendered posts/new.html.erb within layouts/application (51.9ms)
+Completed 200 OK in 143ms (Views: 92.7ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-09-27 10:55:15 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/1HepA+xfTiF7DxwdeLt7HgR962PfLHYkALZCexMTggf5waIBoNcDWKt0hQ75cr+Rdqi0/IHzy6LcpGMKM/kMw==", "post"=>{"title"=>"this title is", "content"=>"this sdasd", "blogger_id"=>"7", "destination_id"=>"1"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.4ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "blogger_id", "destination_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "this title is"], ["content", "this sdasd"], ["blogger_id", 7], ["destination_id", 1], ["created_at", "2018-09-27 14:55:15.346849"], ["updated_at", "2018-09-27 14:55:15.346849"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 0], ["updated_at", "2018-09-27 14:55:15.371999"], ["id", 41]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 59ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 10:55:15 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (58.3ms)
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `full_name' for #<Destination:0x007ff359411eb0>):
+    4: <p><%= @post.title %></p>
+    5: 
+    6: <h2>Destination:</h2>
+    7: <p><%= link_to @post.destination.full_name, destination_path(@post.destination) %></p>
+    8: 
+    9: <h2>Author: </h2>
+   10: <p><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+  
+app/views/posts/show.html.erb:7:in `_app_views_posts_show_html_erb__3846177719231034414_70341575579840'
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 10:55:39 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (270.4ms)
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `destination_path' for #<#<Class:0x007ff3589dce40>:0x007ff359aa44d0>):
+    4: <p><%= @post.title %></p>
+    5: 
+    6: <h2>Destination:</h2>
+    7: <p><%= link_to @post.destination.name, destination_path(@post.destination) %></p>
+    8: 
+    9: <h2>Author: </h2>
+   10: <p><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+  
+app/views/posts/show.html.erb:7:in `_app_views_posts_show_html_erb__3846177719231034414_70341579057080'
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 10:55:57 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.3ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (266.4ms)
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_post_path' for #<#<Class:0x007ff3589dce40>:0x007ff3501d1280>
+Did you mean?  edit_polymorphic_path):
+    14: <h2>Content:</h2>
+    15: <p><%= @post.content %></p>
+    16: 
+    17: <p><%= link_to "Edit", edit_post_path(@post) %></p>
+  
+app/views/posts/show.html.erb:17:in `_app_views_posts_show_html_erb__3846177719231034414_70341498755800'
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 10:56:06 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.1ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 50.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 10:59:31 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.5ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (89.0ms)
+Completed 200 OK in 284ms (Views: 211.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 10:59:35 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 1], ["updated_at", "2018-09-27 15:02:40.234121"], ["id", 41]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:34 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 240067ms (ActiveRecord: 4.4ms)
+
+
+  [1m[36mBlogger Load (0.4ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (11.7ms)
+  
+Completed 200 OK in 67ms (Views: 55.9ms | ActiveRecord: 1.1ms)
+
+
+ActionController::UnknownFormat (PostsController#update_likes is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:38 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.4ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (92.0ms)
+Completed 200 OK in 258ms (Views: 216.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:03:46 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 2], ["updated_at", "2018-09-27 15:03:46.072781"], ["id", 41]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 18ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:46 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 130ms (Views: 116.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:03:53 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.4ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (1.1ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 3], ["updated_at", "2018-09-27 15:03:53.630077"], ["id", 41]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 25ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:53 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 138ms (Views: 127.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:03:54 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 4], ["updated_at", "2018-09-27 15:03:54.514117"], ["id", 41]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 14ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:54 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (1.5ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (4.3ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 126ms (Views: 113.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:03:55 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 5], ["updated_at", "2018-09-27 15:03:55.285221"], ["id", 41]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 14ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:55 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 209ms (Views: 195.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:03:58 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.3ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 6], ["updated_at", "2018-09-27 15:03:58.996492"], ["id", 41]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 22ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:59 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.1ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 111ms (Views: 104.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:03:59 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 7], ["updated_at", "2018-09-27 15:03:59.899829"], ["id", 41]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 20ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:03:59 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.3ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 88ms (Views: 78.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:04:00 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 8], ["updated_at", "2018-09-27 15:04:00.647768"], ["id", 41]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 12ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:04:00 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (3.0ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.4ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 115ms (Views: 104.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:04:01 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 9], ["updated_at", "2018-09-27 15:04:01.329811"], ["id", 41]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 18ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:04:01 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 53ms (Views: 46.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:04:02 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 10], ["updated_at", "2018-09-27 15:04:02.021827"], ["id", 41]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 14ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:04:02 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 100ms (Views: 92.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:04:03 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 11], ["updated_at", "2018-09-27 15:04:03.037983"], ["id", 41]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 14ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:04:03 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.3ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 135ms (Views: 121.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:04:03 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogger Load (0.2ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "posts" SET "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["likes", 12], ["updated_at", "2018-09-27 15:04:03.894084"], ["id", 41]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/41
+Completed 302 Found in 22ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/posts/41" for 127.0.0.1 at 2018-09-27 11:04:03 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlogger Load (0.3ms)[0m  [1m[34mSELECT  "bloggers".* FROM "bloggers" WHERE "bloggers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 101ms (Views: 90.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/41/update_likes" for 127.0.0.1 at 2018-09-27 11:04:12 -0400
+Processing by PostsController#update_likes as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 518662ms (ActiveRecord: 1.8ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `update_likes'
+app/controllers/posts_controller.rb:25:in `update_likes'

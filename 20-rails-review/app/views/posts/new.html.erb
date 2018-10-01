@@ -1,0 +1,24 @@
+<h1>New Post</h1>
+
+<%= form_for(@post) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.collection_select :blogger_id, Blogger.all, :id, :name%>
+  <%= f.collection_select :destination_id, Destination.all, :id, :name%>
+  <%= f.submit %>
+
+<% end %>
+
+
+
+
+
+<h2>Users should be able to create and edit a post</h2>
+<p>Users should be able to select a blogger from a dropdown menu</p>
+<p>A post should be have a title and content longer than 100 characters</p>
+<p>Users should be able to see a post's page with its title and content displayed. On this page, a user should see:</p>
+<p>A link to the page of that post's author</p>
+<p>A link to the page of that post's destination</p>
+<p>A like button link that increases the like count for that post (should take the user to the same page)</p>
