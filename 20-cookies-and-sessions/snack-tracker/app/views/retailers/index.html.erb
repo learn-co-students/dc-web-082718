@@ -1,0 +1,6 @@
+<h1>Retailers#index</h1>
+<p>Find me in app/views/retailers/index.html.erb</p>
+
+<% @retailers.each do |retailer| %>
+    <div><%= link_to retailer.name, retailer_path(retailer) %></div>
+<% end %>
