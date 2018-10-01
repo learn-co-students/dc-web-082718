@@ -1,129 +1,124 @@
-First talk about `Proc`s.  A `Proc` is a type of "Closure", which is a reusable block of code.  It's basically a tiny function.
+- HTTP is "Stateless" - requests don't know about each other
+- Cookies! Small pieces of data sent from a website in the headers and stored on the computer while browsing.  (show in "edit this cookie" Chrome Extension)
+- Domain Specific - show in different windows
+- Add `cookies['favorite'] = "chocolate-chip"` in `SnackController#show`; just a key-value pair (DON'T GO TO SHOW PAGE YET)
 
-Example:
+- Add `<%= cookies['favorite'] %>` to index page to show cookie.  Go to index page, not there yet.  Then go to show page and back to index page
 
-```rb
-yell_the_word = Proc.new {|word| puts "#{word.upcase}!"}
+- Do the same thing with 'session' but show in Edit Cookie that it gets encrypted
 
-yell_the_word.call('hello')
+- On Github.com or any other website--why don't I have to log in on every page?  If it's stateless, how does it know that I'm logged in?
 
-sentence = ["hello", "we", "are", "words"]
+- Building out sign-in; show on github what happens if you clear all cookies and reload (no longer logged in)
+    - Cookies expire
 
-words.each {|w| yell_the_word.call(w)}
+- Create user model in app
+    ` rails g model user username `
 
+- Create a user or two in the console
+
+- How should we build our login page?  Doesn't really map to a CRUD action
+    -   get '/login', to: 'sessions#new'
+    - show in rake routes
+    - login_path
+
+- add controller with new action `rails g controller sessions new`
+
+- Add link on index page
+
+- Build `new.html.erb`
+    - Using `form_tag` since the form is not tied to a model
 ```
-
-* Why use validations
-    - Users are dumb (show gif)
-
-- Different types of validations.  Model level validations are database-agnostic and use the power of ActiveRecord
-
-* What's important about our snacks?
-    - shouldn't have duplicate info
-
-# snack.rb
-
-```rb
-  validates :name, presence: true
-  validates :calories, presence: true
-  validates :deliciousness, presence: true
-```
-
-    - Snack should have name, calories, deliciousness
-    - Why bother with `deliciousness` if there's no way to _not_ put in a value in the form based on the dropdown?
-        - Answer:  Forms are just one way to add data (console, data migrations, seeds, etc)
-    - Show failure in console (works with new, not with create--validations fire on save, i.e., when it hits the database)
-    - show `snack.errors`; `snack.errors.messages`
-    - `belongs_to` is automatically set to `belongs_to :retailer, optional: false`.  Override this by setting to true
-
-    - Demonstrate behavior in browser and necessity for feedback
-
-#snacks_controller.rb
-```rb
-  def create
-    @snack = Snack.create(accepted_params)
-    if @snack.errors
-      render :new
-    else
-      redirect_to snack_path(@snack)
-    end
-  end
-```
-
-# edit_form.erb
-
-```rb
-<% if @snack.errors %>
-    <ul class="error_list">
-    <% @snack.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <h1>Login</h1>
+    <%= form_tag '/login' do %>
+        <%= label :username, "Username" %>
+        <%= text_field_tag :username %>
+        <%= submit_tag 'Login' %>
     <% end %>
-    </ul>
-<% end %>
 ```
 
-    - can show inline styling and stylesheets
-    - bad fields get turned into `field_with_errors`
-```
-.field_with_errors {
-    color: red;
-    display: inline;
-}
+- Form needs to post somewhere; add `post '/login', to: "sessions#create"` to routes.rb
 
-.error_list li {
-    color: red;
-}
-```
+- Elicit desired behavior of login method, build:
 
+```rb  
+def create
+        @user = User.find_by(username: params[:username])
 
-# retailer.rb
-
-```rb
-class Retailer < ApplicationRecord
-    has_many :snacks
-    accepts_nested_attributes_for :snacks, reject_if: proc { |attributes| attributes[:name].blank? }
-
-    validates :name, presence: true, uniqueness: true
-    validates :year_established, presence: true
-    validate :year_established_must_be_valid,
-        unless: Proc.new {|a| a.year_established.blank?}
-    def year_established_must_be_valid
-        if !(self.year_established > 1800 && self.year_established <= Date.today.year)
-            errors.add(:year_established, "must be between 1800 and #{Date.today.year}")
+        if @user
+            session[:user_id] = @user.id
+            redirect_to snacks_path
+        else
+            flash.notice = "No user found with that name"
+            render :new
         end
     end
+```
+- flash - a specific type of cookie that only persists for one request-response cycle; `flash.notice` and `flash.alert` 
 
+- add `<div class="error" > <%= flash.notice %></div>` to sessions/new.html.erb
+
+- Login link doesn't make sense if already logged in.  Change code to:
+
+```rb
+    <% if session[:user_id] %>
+        <h1>Welcome <%= User.find(session[:user_id]).username %></h1>
+    <% else %>
+    <%= link_to "Login", login_path %>
+    <% end %>
+```
+
+- Demonstrate deleting the session
+
+Build logout
+
+routes.rb
+- `delete '/logout', to: 'sessions#destroy', as 'logout'`
+SessionsController#destroy
+```
+def destroy
+    session.clear
+    redirect_to login_path
 end
 ```
+`<%= link_to "Logout", "/logout" %>`
+won't work because it's a get request
+`<%= link_to "Logout", "/logout", method: "DELETE" %>`
 
-# retailer_controller.rb
-```rb
-  def create
-    @retailer = Retailer.create(strong_params)
-    if @retailer.errors
-      @retailer.snacks.build
-      render :new
-    else
-      redirect_to retailer_path(retailer)
+
+- User is going to be necessary all over the place
+    - ApplicationController:  All other controllers inherit from it, so stuff there is accessible all over
+
+    This breaks when no session (i.e., logged out):
+
+    ```rb
+    def current_user
+        @current_user = User.find(session[:user_id]).username
     end
-  end
-```
+    ```
+    - This works (note `find_by`instead of `find`)
+    
+    ```rb    
+    def current_user
+        @current_user = User.find_by(id: session[:user_id])
+    end
+    ```
 
-# Use partials!
+    - doesn't work until you add `helper_method :current_user`
 
-`shared/_errors.html.erb` **Note the underscore--it's actually important**
+    - Use `current_user` more than once on a single page
 
-```rb
-<% if new_object.errors %>
-    <ul class="error_list">
-    <% new_object.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-    <% end %>
-    </ul>
-<% end %>
-```
+    - SHow repeated sql queries in browser/console
+    ```rb
+    # memoization
+    def current_user
+        if @current_user
+            @current_user
+        else
+            @current_user = User.find_by(id: session[:user_id])
+        end
 
-form pages:
-```rb
-<%= render partial: "shared/errors", locals: {new_object: @retailer} %>
-```
+    end
+    ```
+
+ 
