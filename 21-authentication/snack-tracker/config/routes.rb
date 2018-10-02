@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # index, show, new, create, edit, update, delete
   resources :snacks
   resources :retailers, only: [:index, :show, :new, :create]
+  resources :users, only: [:new, :create]
+  
   get "/login", to: 'sessions#new'
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
