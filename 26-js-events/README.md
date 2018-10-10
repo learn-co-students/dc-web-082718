@@ -1,3 +1,11 @@
+## Focus
+ - Callbacks
+ - General Scope Laws
+ - DOM and Event Listeners
+
+ - IIFEs
+ - Function Factories
+
 # Event Listeners
 
 ## Asynchronous vs Synchronous?
@@ -11,15 +19,19 @@
 - (optional) argument for the callback is the event itself
 
 ## Example of Events
-
-## When to add an event Listener
-- on load of page?
-- on creation of element?
+- DOMContentLoaded
+- click
+- submit
+- mouseover
 
 ## Practice
 - When click of email -> send an email
 - When click of submit -> add new instructor
 - When click of row -> view profile
+
+## When to add an event Listener
+- on load of page?
+- on/after creation of element?
 
 ## Some events have default behavior
 - event.preventDefault()
@@ -34,6 +46,8 @@
 
 
 
-## Annoucement
-- Pokemon Pairing Lab the rest of today and through to tomorrow morning. Review is tomorrow at 11am
-- How to import db.json in JS
+## Announcement
+- DOM Challenge Lab Review tomorrow. Feel free to pair or work independently
+
+## Priority
+- DOM, once you finish DOM Challenge, you can go back to JS Foundations
