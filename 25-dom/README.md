@@ -6,8 +6,8 @@
 
 ### Grabbing and Manipulating DOM elements
 - Twitter
-- content
-- css styling
+- content changes
+- CSS styling
 - [DIY](https://en.wikipedia.org/wiki/Document_Object_Model)
 
 ### Selectors and how to use them
@@ -29,7 +29,7 @@
 - `appendChild()``
 - any selector method
 - `innerHTML`
-- `removeChild()``
+- `remove()``
 
 ### Homework before next lecture
 - Watch the first 7 minutes of [this video](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
