@@ -7,7 +7,10 @@
 let count = 0;
 let paused = false;
 // let likeTracker = {}
-//
+
+// To see this fully implemented,
+// check out (https://github.com/learn-co-students/dc-web-071618/blob/master/27-dom-challenge-lab-review/review.js)
+
 // if(!likeTracker[count]) {
 //   likeTracker[count] = 1
 // } else {
