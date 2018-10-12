@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dom Challenge</title>
+  <style>
+    #counter {
+      background-color: black;
+      color: white;
+      display: table;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Welcome to the Silly Clock Challenge
+  </h1>
+  <h1 id='counter'>
+    0
+  </h1>
+  <button id='-' class="disable-me" > ➖ </button>
+  <button id='+' class="disable-me"> ➕ </button>
+  <button id='<3' class="disable-me"> ❤️ </button>
+  <button id='pause' > pause </button>
+
+  <ul class='likes'></ul>
+
+  <div>
+    <h3>Comments</h3>
+    <ul id='list' class='comments'></ul>
+
+    <h3>Leave a comment</h3>
+
+    <form id="comment-form" action="">
+      <input type='text' placeholder="enter your comment" name="" id="comment-input" cols="30" rows="10">
+      </br>
+      <button id='submit'>submit</button>
+    </form>
+
+  </div>
+  <script src="review.js"></script>
+</body>
+</html>
