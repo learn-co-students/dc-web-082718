@@ -4,7 +4,12 @@
 - ES6
 
 ## Why object oriented programming?
-- 
+- object relationships
+- DRY (template/blueprint), potentially less memory
+- easier to read
+`person.greet()
+greet(person)
+`
 
 ## Object Creation Patterns
 - literal
