@@ -1,0 +1,112 @@
+body {
+  background-color: rgb(224, 186, 69)
+}
+
+h1 {
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 75px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+h2, #nameFlavor {
+  color: #111;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+p, label, li {
+  color: #685206;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+button {
+  width: 70%;
+  background-color: lightblue;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  text-justify: inter-word;
+  color: #685206;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=text] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+form {
+  margin: 10px 10px 20px 30px ;
+}
+
+span {
+
+}
+
+.headerBar {
+  background-color: rgb(206, 222, 241);
+  opacity: 0.75;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.iceCreamCreator {
+  width: 30%;
+  border: 1px solid blue;
+  margin: 10px 5px 10px 10px ;
+}
+
+
+.iceCreamContainer {
+  width: 70%;
+  border: 1px solid red;
+  margin: 10px 10px 10px 5px;
+}
+
+#editDeleteButtons {
+  height: 50px;
+}
+
+.editButton {
+  float: left;
+  width: 40%;
+  margin: 2px;
+
+}
+
+.deleteButton {
+  float: right;
+  width: 40%;
+  margin: 2px;
+
+}
+
+#iceCreamGrid {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}

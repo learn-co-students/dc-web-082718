@@ -1,0 +1,59 @@
+{
+  "ingredient": [
+    {
+      "id": 1,
+      "name": "vanilla"
+    },
+    {
+      "id": 2,
+      "name": "chocolate"
+    },
+    {
+      "name": "mint",
+      "id": 3
+    },
+    {
+      "name": "cherries",
+      "id": 4
+    },
+    {
+      "name": "sprinkles",
+      "id": 5
+    },
+    {
+      "name": "walnuts",
+      "id": 6
+    }
+  ],
+  "ice_cream": [
+    {
+      "name": "Rocky Sidewalk!",
+      "ingredients": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "id": 1
+    },
+    {
+      "name": "newIceCream",
+      "ingredients": [
+        1,
+        2,
+        3
+      ],
+      "id": 2
+    },
+    {
+      "name": "Mint Choco",
+      "ingredients": [
+        "2",
+        "3",
+        "5"
+      ],
+      "id": 3
+    }
+  ]
+}

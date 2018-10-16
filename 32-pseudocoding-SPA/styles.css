@@ -1,0 +1,43 @@
+
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* align-items: flex-start; */
+}
+
+
+
+
+
+
+.iceCreamContainer {
+  /* width: 100px;
+  background-color: rgb(239, 239, 239);
+  margin: 5px;
+  overflow: auto; */
+  width: 100px;
+  margin: 0px;
+}
+
+#iceCreamCreator {
+  /* width: 100px; */
+  border: 3px solid #73AD21;
+  /* margin: 0px; */
+  /* margin: auto;  */
+  /* padding-top: 10px;
+  padding-left: 20px; */
+  /* padding-bottom: 20px; */
+}
+
+#iceCreamList {
+  /* width: 100px;
+  margin: 0px; */
+}
+
+/* #iceCreamGrid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+} */
