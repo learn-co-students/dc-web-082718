@@ -118,5 +118,5 @@ We don't want plain text passwords in your database
 3. If not... handle that error
 
 
-[Want to know more?]([JWT Auth in Redux and Rails](https://github.com/learn-co-curriculum/jwt-auth-rails))
+[Want to know more?](https://github.com/learn-co-curriculum/jwt-auth-rails)
 [Cookies vs localStorage](https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage)

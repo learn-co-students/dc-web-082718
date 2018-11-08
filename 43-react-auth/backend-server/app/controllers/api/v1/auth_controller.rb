@@ -8,7 +8,12 @@ class Api::V1::AuthController < ApplicationController
       render json: {
         error: false,
         message: "signed in",
-        token: token
+        token: token,
+        user_info: {
+          bio: @user.bio,
+          avatar: @user.avatar,
+          username: @user.username
+        }
       }, status: :accepted
     else
       render json: {
