@@ -1,59 +1,8 @@
 ## Refactor Challenge - What did we have to change?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- pull state into App.js
+- move where we define our callbacks that manipulate states
+- fix all our props
+- fix our references to old function calls
 
 
 - State initialization moved to App
@@ -62,13 +11,13 @@
 - Computation moved to Header
 - Computation switched to use a prop
 - Change functions switched to props in Counter
-- So many things in the code had to change to accomodate this tiny design change!
+- So many things in the code had to change to accommodate this tiny design change!
 
 # Intro to Redux
 
-- What's hard about managing state in React
 - Introducing Redux and the store
 - Designing our redux state
+- Pulling state from the store
 - Dispatching actions to our store
 - Updating state based on actions
 - Problems with this version of our redux app
@@ -88,7 +37,7 @@ Installing redux: `npm install --save redux`
 - State that lives inside the store
 - Read from the store
 - Tell store when to change state (Dispatch -> Action)
-- Tell the store how to udpate state (Action/oldState -> Reducer -> newState)
+- Tell the store how to update state (Action/oldState -> Reducer -> newState)
 
 
 Creating our redux store:
@@ -215,60 +164,7 @@ Add buttons, actions, and cases to your reducer so that we can increment and dec
 - The problem we are trying to solve
 
 ## Problems we still have
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Hacky forced re-render
 - Everything in one file
-- Organize our App (Components, Redux folder)
-- What if we have more keys in our state?
-- How will components communicate with store?
+- organize our code
+- NOT DO THIS:     store.subscribe(() => this.forceUpdate())
+- hot to communicate with an API
