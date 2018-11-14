@@ -1,32 +1,95 @@
+## Refactor Challenge - What did we have to change?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- State initialization moved to App
+- State managing callback functions moved to App
+- Count in Counter changed to `this.props.count`
+- Computation moved to Header
+- Computation switched to use a prop
+- Change functions switched to props in Counter
+- So many things in the code had to change to accomodate this tiny design change!
+
 # Intro to Redux
 
 - What's hard about managing state in React
-- Introducing Redux
+- Introducing Redux and the store
 - Designing our redux state
 - Dispatching actions to our store
-- Updating based on actions
+- Updating state based on actions
 - Problems with this version of our redux app
+
 
 ## (Psst! Redux Terminology Cheatsheet)
 [Redux Terminology](https://gist.github.com/alexgriff/0e247dee73e9125177d9c04cec159cc6)
 
-## The Problem - Refactoring Components
-![gif](http://g.recordit.co/s2OFw0VtYb.gif)
 
-We've changed `App` so that the computed value can render in the Header. What did we have to change?
+## Getting Starting with Redux
 
-- state initialization moved to App
-- state managing functions moved to App
-- count in Counter changed to `this.props.count`
-- computation moved to Header
-- computation switched to use a prop
-- change functions switched to props in Counter
+Installing redux: `npm install --save redux`
 
-Almost everything in the code for the App had to change to accomodate this tiny design change!
 
-## Introducing Redux - The Plumbing
+### What do we need to build?
+- Store
+- State that lives inside the store
+- Read from the store
+- Tell store when to change state (Dispatch -> Action)
+- Tell the store how to udpate state (Action/oldState -> Reducer -> newState)
 
-Installing redux: `yarn add redux`
 
 Creating our redux store:
 
@@ -40,6 +103,13 @@ const reducer = (oldState, action) => {
 }
 
 const store = createStore(reducer);
+```
+
+```js
+const reducer = (oldState = { count: 0 }, action) => {
+  console.log('action', action)
+  return oldState;
+}
 ```
 
 ## Designing our state
@@ -95,13 +165,6 @@ A: Wherever you like! They don't depend on `setState`, so they can be defined in
 
 Let's see the actions flow through our reducer:
 
-```js
-const reducer = (oldState = { count: 0 }, action) => {
-  console.log('action', action)
-  return oldState;
-}
-```
-
 *Rule: we must not mutate the old state!*
 
 Our reducer should return a _new_ object with the updated state
@@ -136,7 +199,7 @@ const reducer = (oldState = { count: 0 }, action) => {
 
 The redux store is changing! (We can see if we log it)
 
-React only rerenders on props or state change. We need a little hack to make our store updates rerender our app.
+Hacky solution:
 
 ```js
 componentDidMount() {
@@ -147,3 +210,65 @@ componentDidMount() {
 ## Challenge
 
 Add buttons, actions, and cases to your reducer so that we can increment and decrement by `+3` and `-5`
+
+## What if I want to move the description back to the Counter?
+- The problem we are trying to solve
+
+## Problems we still have
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Hacky forced re-render
+- Everything in one file
+- Organize our App (Components, Redux folder)
+- What if we have more keys in our state?
+- How will components communicate with store?
