@@ -1,37 +1,9 @@
 # Introduction to Redux
 
-No setup required for this lecture, it is presentation accompanied by a slideshow. The overaching goal of this lecture is to introduce students to the Redux library and explain why we want to use it within our applications.
-
-
-## SWBATs
-* Give a general outline of Redux. What is Redux and what does it do for us?
-* Show how state is managed through Redux and how the store works.
-* Explain the problems that come with everchaning state in React.
-* Explain why Redux is a solution to React state problems.
-
-
-
 ## Resources
 * [Redux Lecture Slides](https://docs.google.com/presentation/d/1IIzo1y-nHkQEGtEhDiq7NevbTipq0jGj9XjOs4hLE9Q/edit#slide=id.g342b7ede26_0_19)
 
-## Outline
-
-
-
-```
-   5m | Problems of React
-   5m | The Solution: Redux
-  10m | Single Source of Truth: Store
-  10m | Read and Writing to the Store
-  10m | Pure Functions: Reducers
-  10m | Unidirectional Flow
-   5m | Common Hurdles of Redux
-   5m | Questions
-  ----|----
-  60m Total
-```
-
-### Problems of React
+### Problems of React State
 * State is ever-changing and is constantly being mutated in React.
 * Large React apps require props to be passed needlessly throughout the component tree.
 * React apps with tons of stateful components are constantly rerendering.
@@ -76,7 +48,7 @@ No setup required for this lecture, it is presentation accompanied by a slidesho
   1. Component triggers an action
   2. Action sent to reducer
   3. Reducer returns the new state
-  4. Change in store causes rerender in components that rely on the piece of state that changed
+  4. Change in store causes re-render in components that rely on the piece of state that changed
 
 ### Common Hurdles of Redux
 * Global State:
