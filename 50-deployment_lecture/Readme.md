@@ -182,11 +182,19 @@ Environments
 
 ### Method 1: Rails on Heroku, React on Now
 
-Part the first. In which we prepare the Rails App for deployment
+Part the first. In which we prepare the Rails App for deployment - 
+    - sign up for Heroku, install Heroku CLI. 
+    - initialize app with postgres using the tag `--database=postgresql`. If initialized with sqlite3, swap out the gem for         `gem pg` in gemfile, and update `application/database.yml` to reflect changes.  
+    - configure CORS to allow incoming requests
+   
 
 Part the second. In which we create the heroku app and deploy.
+    - run `heroku logs` to debug
 
 Part the third. In which we prepare the React app for deployment.
+    - configure your fetch URL to responde to production and development environments: 
+      `const URL = process.env[“NODE_ENV”] === ‘development’ ? ‘http://backend.herokuapp.com/hogs':      ‘http://localhost:3000/hogs'`
+
 
 Part the fourth. In which we create the now app and deploy.
 
@@ -214,8 +222,6 @@ Chef, Puppet, Docker
 
 ## Now Tips
 
-- must have a valid build script in package.json
+- must have a valid build script in package.json. If broken:
   - yarn global add serve
   - swap 'start' script with 'serve -s build' to optimally bundle react app before deployment
-  - configure your fetch URL to responde to production and development environments: 
-  `const URL = process.env[“NODE_ENV”] === ‘development’ ? ‘http://backend.herokuapp.com/hogs' : ‘http://localhost:3000/hogs'`
