@@ -1,8 +1,6 @@
-Deployment notes:
-
 # Deployment
 
-Goals:
+# Things to discuss:
 
 - Domain Name Resolution
 - Servers
@@ -12,74 +10,72 @@ Goals:
 
 ## Review: Request Response Cycle
 
-Client makes a request to the server for some information
+ Client makes a request to the server for some information
 
-- HTTP request (GET, POST, ...)
+  - HTTP request (GET, POST, ...)
 
-Server responds
-mod2: rendered html pages as the response body
+ Server responds
+   mod2: rendered html pages as the response body
 
-mod3: ...index.html gets rendered as a single page app
-json as the response body
+   mod3: ...index.html gets rendered as a single page app
+   json as the response body
 
-What does it mean to Deploy an app? Where do the websites you regularly visit 'live?'
+ What does it mean to Deploy an app? Where do the websites you regularly visit 'live?'
 
-1.  Domain Name Resolution
-    google.com => 216.58.218.238 // url converted into the IP address for the computer (read: server) you want to talk to
+  1.  Domain Name Resolution
+       google.com => 216.58.218.238 // url converted into the IP address for the computer (read: server) you want to talk to
+       `ping google.com`
 
-`ping google.com`
+       - asks local 'router' ({ google.com => 216.58.218.238, facebook.com => 31.13.69.228 })
+       - 'root' of the tree - root nameserver
+       - answer the question: what IP address should this name resolve to?
+       - use 'name records' - Game of ‘telephone’ asking for directions to google.com `nslookup google.com`
 
-- asks local 'router' ({ google.com => 216.58.218.238, facebook.com => 31.13.69.228 })
-- 'root' of the tree - root nameserver
-- answer the question: what IP address should this name resolve to?
-- use 'name records' - Game of ‘telephone’ asking for directions to google.com `nslookup google.com`
+       - CNAME
+       - A Name
+       - MX records
+       - Expiration - 15 minutes, 1 year
+         => configure name records so that a Domain Name routes to your server
 
-- CNAME
-- A Name
-- MX records
-- Expiration - 15 minutes, 1 year
-  => configure name records so that a Domain Name routes to your server
-
-2.  IP - route the packets (not something you have to think about)
-    IP address IPv4 IPv6 (345f:34d3:345f:34d3)
-    127.0.0.1 - localhost
-    0.0.0.0
+  2.  IP - route the packets (not something you have to think about)
+      IP address IPv4 IPv6 (345f:34d3:345f:34d3)
+      127.0.0.1 - localhost
+      0.0.0.0
 
 [ black box ]
 
-Server sends a response to the request (HTTP response)
+   Server sends a response to the request (HTTP response)
 
-- status (200 ok, 301 redirect, 404 not found)
-- body (html of the page, json)
+    - status (200 ok, 301 redirect, 404 not found)
+    - body (html of the page, json)
 
-Page loaded by the browser
-Data gets used by the client application
+   Page loaded by the browser
+   Data gets used by the client application
 
-So far, client and server on the same machine.
+   So far, client and server on the same machine.
 
 _Goal: Application accessible to the internet!_
 
-- setup some name to point to our computer, using service called 'ngrok'
-  `ngrok http 3000`
+  - setup some name to point to our computer, using service called 'ngrok'
+    `ngrok http 3000`
 
   - serve from your computer
   - very temporary
-
-- Not great - we want to run our code on some computer that doesn't shut down
+  - Not great - we want to run our code on some computer that doesn't shut down
 
 _'Cloud Providers'_
 
-- AWS
-- Google Cloud
-- Azure
-- Heroku
-- Digital Ocean
-- Linode
-- ...
+  - AWS
+  - Google Cloud
+  - Azure
+  - Heroku
+  - Digital Ocean
+  - Linode
+  - ...
 
-- Application on some machines
-- Database on another machine
-- Servers should know how to reach the database
+  - Application on some machines
+  - Database on another machine
+  - Servers should know how to reach the database
 
 ## Scale?
 
@@ -108,29 +104,29 @@ _'Cloud Providers'_
 
 Control differences between different 'Environments'
 
-- what url to fetch?
-- what database to connect to?
-- do different things with errors
-- might not actually hit external service
-- ...
+  - what url to fetch?
+  - what database to connect to?
+  - do different things with errors
+  - might not actually hit external service
+  - ...
 
 Frontend changes
 
-- faster,
-- error display
-- remove development features
+  - faster
+  - error display
+  - remove development features
 
 Environments
 
-- Development - local (i.e. your computer)
-- Test - local testing
+  - Development - local (i.e. your computer)
+  - Test - local testing
 
   - Continuous Integration / way to run your tests before deploying new code
   - lots of services to do this
 
-- Production
-  - (Staging) - pretend deployment environment
-    users don't see it, but otherwise, basically the same as production
+  - Production
+    - (Staging) - pretend deployment environment
+      users don't see it, but otherwise, basically the same as production
 
 * Deployment Pipeline
 
@@ -147,40 +143,40 @@ Environments
 
 ## Heroku
 
-deploy with git!
-auto detect how to run the application
+  deploy with git!
+  auto detect how to run the application
 
 ## But... how do we deploy the frontend?
 
-- build our frontend assets (bundle, styles, images)
-- serve these assets?
-- push to github pages
-- serves static files
+  - build our frontend assets (bundle, styles, images)
+  - serve these assets?
+  - push to github pages
+  - serves static files
 
-Monorepo
+ Monorepo
 
-- 'single repository'
-- build and serve your javascript app from your rails app
-- part of the build process is to bundle your frontend
-- include your js bundle on some rails rendered page
-- serve statically or render erb
-- '/'
+  - 'single repository'
+  - build and serve your javascript app from your rails app
+  - part of the build process is to bundle your frontend
+  - include your js bundle on some rails rendered page
+  - serve statically or render erb
+  - '/'
 
-Microservices
+ Microservices
 
-- two services
-- deploy a separate service to serve your react app
-- lots of simple static file servers that work
-- point your client at the server
-- cors configured
-  - `*`
-  - 'frontend.com'
-  - config/application.rb
+  - two services
+  - deploy a separate service to serve your react app
+  - lots of simple static file servers that work
+  - point your client at the server
+  - cors configured
+    - `*`
+    - 'frontend.com'
+    - config/application.rb
 
-domain names
+ domain names
 
-- buy name from some hosting service
-- add the name records to point to the ip address of your server
+  - buy name from some hosting service
+  - add the name records to point to the ip address of your server
 
 ## Steps to deploy
 
@@ -221,7 +217,5 @@ Chef, Puppet, Docker
 - must have a valid build script in package.json
   - yarn global add serve
   - swap 'start' script with 'serve -s build' to optimally bundle react app before deployment
-
-CheatSheet:
-
-const URL = process.env[“NODE_ENV”] === ‘development’ ? ‘http://backend.herokuapp.com/hogs' : ‘http://localhost:3000/hogs'
+  - configure your fetch URL to responde to production and development environments: 
+  `const URL = process.env[“NODE_ENV”] === ‘development’ ? ‘http://backend.herokuapp.com/hogs' : ‘http://localhost:3000/hogs'`
