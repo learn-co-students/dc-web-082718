@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <br />
+  <h1
+    className="ui header"
+  >
+    <i
+      className="gem icon"
+    />
+    To Do
+  </h1>
+  <Connect(Todos) />
+  <Connect(AddTodo) />
+</div>
+`;

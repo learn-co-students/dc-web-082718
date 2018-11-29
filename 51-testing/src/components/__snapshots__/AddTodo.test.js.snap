@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add todo component matches its snapshot 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="ui input"
+      onChange={[Function]}
+      placeholder="Add a New Todo..."
+      value=""
+    />
+  </form>
+</div>
+`;
